@@ -2,7 +2,7 @@
 
 ## Table of Contents
 [Chapter 1: Introduction](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#chapter-1-introduction)\
-[Section 1.]()\
+[Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
 [Section 1.]()\
 [Section 1.]()\
 [Section 1.]()
