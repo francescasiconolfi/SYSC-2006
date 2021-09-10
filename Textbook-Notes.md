@@ -150,13 +150,13 @@ While Loop Format:
 For a single-statement while loop, braces are unnecessary:
 
 > while (condition)\
->   body;
+> \tbody;
 
 For a multiple-line while loop, use braces:
 
 > while (condition)\
 > {\
->   body;\
+> \tbody;\
 > }
 
 Notice: All statments controlled by the while loop are always indented once.
