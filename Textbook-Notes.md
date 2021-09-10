@@ -112,6 +112,14 @@ printf("If your income is $%d, and your expenses are $%d, you are probably in de
 
 Appearance:
 
-If your income is $50000, and your expenses are $60000, you are probably in debt.
+```If your income is $50000, and your expenses are $60000, you are probably in debt.
+
+
+```
+
+
+
+
+
 
 
