@@ -164,6 +164,7 @@ For a multiple-line while loop, use braces:
 ``` C
 main()
 {
+
 while (condition)
 {
 line 1;
