@@ -15,9 +15,9 @@ First line of the program, `#include <stdio.h>` tells the compiler to include in
 The second line of the program should define "main", which is a function vital to every program: `main()`.\
 No arguments should be between its brackets.
 
-In order to enclose statements in the function "main", *curly braces* ({}) are required following "main".
+In order to enclose statements in the function "main", *curly braces* ( {} ) are required following "main".
 
-Finally, each line should end with a *semicolon* (;).
+Finally, each line should end with a *semicolon* ( ; ).
 
 Basic format of any C program:
 
