@@ -8,14 +8,9 @@ Language examples, practice, and information on syntax & styling will be include
 
 Notes will follow the format of the assigned textbook, *The C Programming Language (2nd Edition)*, by Brain W. Kernighan and Dennis M. Ritchie.
 
-## Notes
+## Sections
 
-[Chapter 1]()\
-[Chapter 2]()\
-[Chapter 3]()\
-[Chapter 4]()\
-[Chapter 5]()
-
-## Language Practice
+[Textbook Notes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md)
+[C Language Practice]()
 
 
