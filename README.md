@@ -10,7 +10,7 @@ Notes will follow the format of the assigned textbook, *The C Programming Langua
 
 ## Sections
 
-[Textbook Notes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md)
+[Textbook Notes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md)\
 [C Language Practice]()
 
 
