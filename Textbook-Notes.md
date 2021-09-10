@@ -1,10 +1,10 @@
 # The C Programming Language Textbook Notes
 
 ## Table of Contents
-[Chapter 1: Introduction]()
-[Section 1.]()
-[Section 1.]()
-[Section 1.]()
+[Chapter 1: Introduction]()\
+[Section 1.]()\
+[Section 1.]()\
+[Section 1.]()\
 [Section 1.]()
 
 ## Chapter 1
