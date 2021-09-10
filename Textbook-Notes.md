@@ -112,10 +112,22 @@ printf("If your income is $%d, and your expenses are $%d, you are probably in de
 
 Appearance:
 
-```If your income is $50000, and your expenses are $60000, you are probably in debt.
+> If your income is $50000, and your expenses are $60000, you are probably in debt.
+>
+
+#### Other Character Specifications:
+The following is a list of character specifications recognized and read by printf(), as well as other applicable functions:
+
+- `%d` represents a decimal value
+- `%f` represents a float value
+- `%o` represents an octal value
+- `%x` represents a hexadecimal value
+- `%c` represents a character value
+- `%s` represents a string value
+- `%%` represents the character '%'
 
 
-```
+
 
 
 
