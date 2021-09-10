@@ -3,7 +3,7 @@
 ## Table of Contents
 [Chapter 1: Introduction](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#chapter-1-introduction)\
 [Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
-[Section 1.2:]()\
+[Section 1.2: Variables and Artihmetic Expressions]()\
 
 
 ## Chapter 1: Introduction
@@ -16,7 +16,7 @@ No arguments should be between its brackets.
 
 In order to enclose statements in the function "main", *curly braces* ( {} ) are required following "main".
 
-Finally, each line should end with a *semicolon* ( ; ).
+Finally, each line terminates with a *semicolon* ( ; ).
 
 Basic format of any C program:
 
@@ -35,7 +35,7 @@ main()
 
 where "// statements;" represents where the function's statements are supposed to be written
 
-### Section 1.2:
+### Section 1.2: Variables and Arithmetic Expressions
 
 ### Escape Sequences
 The following is a list of escape sequences, which each consist of a blackslash and a single character, in order to represent particular actions within the program:
@@ -126,9 +126,12 @@ The following is a list of character specifications recognized and read by print
 - `%s` represents a string value
 - `%%` represents the character '%'
 
+#### Making Comments
+To make a single-line comment, use double slashes: `//`
 
+To make a multiple-line comment, enclose text between `/*` (opening comment symbol) and `*/` (closing comment symbol).
 
-
+#### While Loops
 
 
 
