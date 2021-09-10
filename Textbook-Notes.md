@@ -98,10 +98,20 @@ Example:
 main()
 {
 
-printf("");
+int income
+int expenses
+
+income = 50000
+expenses = 60000
+
+printf("If your income is $%d, and your expenses are $%d, you are probably in debt.\n", income, expenses);
 
 }
 
 ```
+
+Appearance:
+
+If your income is $50000, and your expenses are $60000, you are probably in debt.
 
 
