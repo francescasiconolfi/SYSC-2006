@@ -1,13 +1,13 @@
 # The C Programming Language Textbook Notes
 
 ## Table of Contents
-[Chapter 1: Introduction]()\
+[Chapter 1: Introduction](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#chapter-1-introduction)\
 [Section 1.]()\
 [Section 1.]()\
 [Section 1.]()\
 [Section 1.]()
 
-## Chapter 1
+## Chapter 1: Introduction
 
 ### Section 1.1: Getting Started
 First line of the program, `#include <stdio.h>` tells the compiler to include information about the stdin/stdout (standard input/standard output) library.
