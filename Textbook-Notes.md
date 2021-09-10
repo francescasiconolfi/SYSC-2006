@@ -27,9 +27,21 @@ Basic format of any C program:
 main()
 {
 
-// CODE
+// statements;
 
 }
 
 ```
+
+where "// statements;" represents where the function's statements are supposed to be written
+
+#### The printf Function
+The `printf()` function is a library function that prints output.
+
+All string literals should be the first argument between the brackets, while other values should follow, seperated by commas: `printf("str", variable1, value1, variable2)`.
+
+Do not forget to include a newline each time it is used, to ensure there is a line advance after its output, using the following *escape sequence*: `\n`
+
+
+
 
