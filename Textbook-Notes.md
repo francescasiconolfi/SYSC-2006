@@ -4,6 +4,7 @@
 [Chapter 1: Introduction](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#chapter-1-introduction)\
 [Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
 [Section 1.2: Variables and Artihmetic Expressions](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-12-variables-and-arithmetic-expressions)\
+[Section 1.3: The For Statement]()
 
 
 ## Chapter 1: Introduction
@@ -37,7 +38,7 @@ where "// statements;" represents where the function's statements are supposed t
 
 ### Section 1.2: Variables and Arithmetic Expressions
 
-### Escape Sequences
+#### Escape Sequences
 The following is a list of escape sequences, which each consist of a blackslash and a single character, in order to represent particular actions within the program:
 
 - `\n` represents a newline
@@ -46,7 +47,7 @@ The following is a list of escape sequences, which each consist of a blackslash 
 - `\"` represents a double quotation
 - `\\` represents a backslash
 
-### Variable Declarations
+#### Variable Declarations
 
 All created variables must be declared before they are used; that is, their type and name must be declared before use in the following order: `type name`
 
@@ -115,7 +116,7 @@ Appearance:
 > If your income is $50000, and your expenses are $60000, you are probably in debt.
 >
 
-#### Other Character Specifications:
+##### Other Character Specifications:
 The following is a list of character specifications recognized and read by printf(), as well as other applicable functions:
 
 - `%d` represents a decimal value
@@ -126,15 +127,49 @@ The following is a list of character specifications recognized and read by print
 - `%s` represents a string value
 - `%%` represents the character '%'
 
+These character combinations also allows specification of character width, as well as decimal precision in the following format: `%#.#c`
+
+where the first number (before the decimal) represents the width, and the number after the decimal represents the precision
+
+To just specify one, omit the other.
+
+Example:
+
+`printf("I spent %.3f dollars today.\n", spent);` will result in the value assigned to variable 'spent' having 3 decimal places.
+
 #### Making Comments
 To make a single-line comment, use double slashes: `//`
 
 To make a multiple-line comment, enclose text between `/*` (opening comment symbol) and `*/` (closing comment symbol).
 
 #### While Loops
+While loops repeatedly execute the body of the while loop, granted the condition results in True. Once the condition is evaluated to be False, the loop ends, and execution continues at the following statement.
 
+While Loop Format:
 
+For a single-statement while loop, braces are unnecessary:
 
+> while (condition)
+>   body;
 
+For a multiple-line while loop, use braces:
+
+> while (condition)
+> {
+>   body;
+> }
+
+Notice: All statments controlled by the while loop are always indented once.
+
+#### Arithmetic Notes
+
+Integer division causes truncation, so any fraction < 1 will be read as 0.\
+To avoid this, seperately multiply by the numerator, and divide by the denominator.\
+Another option is to multiply by a fraction consisting of floating point numbers, since float division is not truncated.
+
+If both operands in an operation are integers, integer operation is performed.
+Operations with a floating point operand will cause the other operand to be converted to a float as well, given it was an int before.
+
+### Section 1.3: The For Statement
 
 
