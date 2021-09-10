@@ -149,16 +149,29 @@ While Loop Format:
 
 For a single-statement while loop, braces are unnecessary:
 
-> while (condition)\
->     body;
+``` C
+main ()
+{
+
+while (condition)
+  body;
+
+}
+```
 
 For a multiple-line while loop, use braces:
 
-> while (condition)\
-> {\
->     body;\
-> }
+``` C
+main()
+{
+while (condition)
+{
+line 1;
+line 2;
+}
 
+}
+```
 Notice: All statments controlled by the while loop are always indented once.
 
 #### Arithmetic Notes
