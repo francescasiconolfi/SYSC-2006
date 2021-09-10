@@ -150,7 +150,7 @@ While Loop Format:
 For a single-statement while loop, braces are unnecessary:
 
 > while (condition)\
->   body;\
+>   body;
 
 For a multiple-line while loop, use braces:
 
