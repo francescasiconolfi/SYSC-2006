@@ -3,9 +3,8 @@
 ## Table of Contents
 [Chapter 1: Introduction](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#chapter-1-introduction)\
 [Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
-[Section 1.]()\
-[Section 1.]()\
-[Section 1.]()
+[Section 1.2:]()\
+
 
 ## Chapter 1: Introduction
 
@@ -20,4 +19,17 @@ In order to enclose statements in the function "main", *curly braces* ( {} ) are
 Finally, each line should end with a *semicolon* ( ; ).
 
 Basic format of any C program:
+
+``` C
+
+#include <stdio.h>
+
+main()
+{
+
+// CODE
+
+}
+
+```
 
