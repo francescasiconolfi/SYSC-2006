@@ -240,8 +240,8 @@ main()
 
 Appearance:
 
-> One year has passed, so my dog is now 0 in human years.
-> One year has passed, so my dog is now 7 in human years.
-> One year has passed, so my dog is now 14 in human years.
+> One year has passed, so my dog is now 0 in human years.\
+> One year has passed, so my dog is now 7 in human years.\
+> One year has passed, so my dog is now 14 in human years.\
 > ...
 
