@@ -33,7 +33,7 @@ Basic format of any C program:
 main()
 {
 
-// statements;
+    // statements;
 
 }
 
@@ -76,9 +76,9 @@ Example:
 main()
 {
 
-int age
+    int age
 
-age = 3
+    age = 3
 
 }
 
@@ -104,13 +104,13 @@ Example:
 main()
 {
 
-int income
-int expenses
+    int income
+    int expenses
 
-income = 50000
-expenses = 60000
+    income = 50000
+    expenses = 60000
 
-printf("If your income is $%d, and your expenses are $%d, you are probably in debt.\n", income, expenses);
+    printf("If your income is $%d, and your expenses are $%d, you are probably in debt.\n", income, expenses);
 
 }
 
@@ -158,8 +158,8 @@ For a single-statement while loop, braces are unnecessary:
 main ()
 {
 
-while (condition)
-  body;
+    while (condition)
+        body;
 
 }
 ```
@@ -170,11 +170,11 @@ For a multiple-line while loop, use braces:
 main()
 {
 
-while (condition)
-{
-line 1;
-line 2;
-}
+    while (condition)
+        {
+        line 1;
+        line 2;
+        }
 
 }
 ```
@@ -190,5 +190,37 @@ If both operands in an operation are integers, integer operation is performed.
 Operations with a floating point operand will cause the other operand to be converted to a float as well, given it was an int before.
 
 ### Section 1.3: The For Statement
+For loops consist of three parts, seperated by semicolons, within parentheses, and act like that of the while loop.\
+The first part within the parentheses is the initialization; the second part is the condition that controls the loop; the third is the increment step, which causese the body to be reevaluated.
 
+Again, for a single-line body of the loop, braces are unnecessary:
+
+``` C
+main()
+{
+
+    for (initialization; condition; incremental step)
+        body;
+        
+}
+```
+
+For a multiple-line for loop, use braces:
+    
+``` C
+main()
+{
+
+    for (initialization; condition; incremental step)
+        {
+        line 1;
+        line 2;
+        }
+        
+}
+```
+
+Note: For loops are usually used when the initialization and increment statements are logically related and single statements.
+
+Example:
 
