@@ -12,6 +12,6 @@ main()
   
   for (weekly_expenses = START; weekly_expenses <= YEAR; weekly_expenses = weekly_expenses + COST)
     printf("I have now spent $%d out of my budget of $1500.\n", weekly_expenses);
-  printf("I have now run out of money.");
+  printf("I have now run out of money.\n");
   
 }
