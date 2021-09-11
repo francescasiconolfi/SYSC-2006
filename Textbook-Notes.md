@@ -224,3 +224,24 @@ Note: For loops are usually used when the initialization and increment statement
 
 Example:
 
+``` C
+
+# include <stdio.h>
+
+main()
+{
+    int dog_age;
+    
+    for (dog_age = 0; dog_age <= 105; dog_age = dog_age + 7)
+        printf("One year has passed, so my dog is now %d in human years.\n", dog_age);
+
+}
+```
+
+Appearance:
+
+> One year has passed, so my dog is now 0 in human years.
+> One year has passed, so my dog is now 7 in human years.
+> One year has passed, so my dog is now 14 in human years.
+> ...
+
