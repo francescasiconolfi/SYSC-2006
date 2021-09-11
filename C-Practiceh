@@ -1,0 +1,15 @@
+# include <stdio.h>
+
+#define START 0
+#define COST 150
+#define YEAR 1500
+
+main()
+{
+  int weekly_expenses;
+  
+  for (weekly_expenses = START; weekly_expenses <= YEAR; weekly_expenses = weekly_expenses + COST)
+    printf("I have now spent $%d out of my budget of $1500.\n", weekly_expenses);
+  printf("I have now run out of money.");
+  
+}
