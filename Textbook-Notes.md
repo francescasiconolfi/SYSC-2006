@@ -8,7 +8,8 @@
 
 [Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
 [Section 1.2: Variables and Artihmetic Expressions](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-12-variables-and-arithmetic-expressions)\
-[Section 1.3: The For Statement](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-13-the-for-statement)
+[Section 1.3: The For Statement](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-13-the-for-statement)\
+[Section 1.4: Symbolic Constants]()
 
 </details>
 
@@ -244,4 +245,33 @@ Appearance:
 > One year has passed, so my dog is now 7 in human years.\
 > One year has passed, so my dog is now 14 in human years.\
 > ...
+
+### Section 1.4: Symbolic Constants
+Constants are conventially replaced with symbolic names in order to allow better readability.
+
+A #define line defines the symbolic name/constant like so: `#define name replacement text`
+
+where any occurence of *name* will be replaced by *replacement text*; *name* is a sequence of letters + digits that begins w/ a letter (not within quotations); *replacement text* is any sequence of characters
+
+Notes: (1) Symbolic constants are conventionally written in uppercase to be ditinguished from variables, (2) There is no semicolon at the end of #define line.
+
+Example:
+
+``` C
+
+# include <stdio.h>
+
+#define BORN 0
+#define DEAD 105
+#define DIFF 7
+
+main()
+{
+    int dog_age
+    
+    for (dog_age = BORN; dog_age <= DEAD; dog_age = dog_age + DIFF)
+        printf("One year has passed, so my dog is now %d in human years.\n", dog_age);
+
+}
+```
 
