@@ -1,6 +1,4 @@
-## SATURDAY SEPT 11, 2021
-
-``` C
+// SATURDAY SEPT 11, 2021
 
 # include <stdio.h>
 
@@ -17,4 +15,3 @@ main()
   printf("I have now run out of money.");
   
 }
-```
