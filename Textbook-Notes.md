@@ -253,7 +253,7 @@ A #define line defines the symbolic name/constant like so: `#define name replace
 
 where any occurence of *name* will be replaced by *replacement text*; *name* is a sequence of letters + digits that begins w/ a letter (not within quotations); *replacement text* is any sequence of characters
 
-Notes: (1) Symbolic constants are conventionally written in uppercase to be ditinguished from variables, (2) There is no semicolon at the end of #define line.
+Notes: (1) Symbolic constants are conventionally written in uppercase to be ditinguished from variables, (2) There is no semicolon at the end of #define line, (3) They are defined before any function is written.
 
 Example:
 
