@@ -132,10 +132,66 @@ Note: The body is only iterated over again if condition is True.
 ### Elements of C
 
 Fundamental Types:
-- char (character - usually a byte)
-- int (signed integer)
-- float (single-precision floating-point)
-- double (double-precision floating-point)
-- _Bool (Boolean - added in C99)
-- _Complex (Complex numbers - added in C99)
+- *char* (character - usually a byte)
+- *int* (signed integer)
+- *float* (single-precision floating-point)
+- *double* (double-precision floating-point)
+- *_Bool* (Boolean - added in C99)
+- *_Complex* (Complex numbers - added in C99)
 
+Note: There is no str type.
+
+Type Qualifiers:
+- unsigned
+- short
+- long
+
+Examples:
+1. 1234 is an int
+2. 1.2, -7.2, 2e-3. 7.3e+4 are doubles
+3. 'x' is a char
+4. "x" and "hello" are str literals
+
+Rules for Naming Variables:
+- First character must be a letter (underscore included) (convention: lowercase)
+- Remaining characters can be letters and digits 
+
+Rules for Using Variables:
+- Must declare a variable before use (ex. `int lower; upper;`)
+- Can initialize variables whilst declaring them (ex. `int k = 0`)
+
+Arithmetic Operators:
+- Binary Operators (*, /, % have precedence over +, -)
+- Integer Operators (when operands are all *int* - always rounds towards 0, as of C99) (% is only used with integers)
+
+Relational Operators:
+- >, >=, <, <= have precedence over ==, !=
+
+Note: Arithmetic operators > Relational operators
+
+Operands are converted to a common type before evaluation ("narrower" operands are usually converted to "wider" operands).
+- Any statements with *double*s will cause all operands to convert to *double*
+- Any statements with *float*s will cause all operands to convert to *float*
+- Otherwise, *char* will be converted to *int*
+
+**If Statements**:
+General format:
+
+``` C
+
+int main()
+{
+
+  if (expression)
+  {
+    statement 1;
+    statment 2;
+  }
+  
+return 0
+
+}
+
+```
+
+Note: Statments are executed if *expression* is True.
