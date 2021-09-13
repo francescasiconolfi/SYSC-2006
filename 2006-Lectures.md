@@ -165,7 +165,7 @@ Arithmetic Operators:
 - Integer Operators (when operands are all *int* - always rounds towards 0, as of C99) (% is only used with integers)
 
 Relational Operators:
-- >, >=, <, <= have precedence over ==, !=
+- \>, >=, <, <= have precedence over ==, !=
 
 Note: Arithmetic operators > Relational operators
 
