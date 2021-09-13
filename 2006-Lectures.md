@@ -321,8 +321,24 @@ int main(void):
     i = i + 1;
   }
 
-  return 0
+  return 0;
  
+}
+
+int power(int base, int n)
+{
+
+  int p = 1;
+  while (n > 0)
+  {
+  
+    p *= base;
+    n--;
+  
+  }
+  
+  return p;
+
 }
  
  ```
