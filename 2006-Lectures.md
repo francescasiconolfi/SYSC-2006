@@ -5,7 +5,7 @@
 
 ## Lecture 2
 
-### Imperative Programming 
+### Imperative Programming
 Computation specified using statements that change the program's *state*.
 
 The state is maintained using variables.\
@@ -174,7 +174,7 @@ Operands are converted to a common type before evaluation ("narrower" operands a
 - Any statements with *float*s will cause all operands to convert to *float*
 - Otherwise, *char* will be converted to *int*
 
-**If Statements**:
+**If Statements**:\
 General format:
 
 ``` C
@@ -196,7 +196,8 @@ return 0
 
 Note: Statments are executed if *expression* is True.
 
-**If-Else Statements**:
+**If-Else Statements**:\
+General format:
 
 ``` C
 
@@ -222,7 +223,7 @@ return 0
 
 Notes: (1) `else` is executed if *expression* is False, (2) There is no elif keyword, so only have nested if statements (else if statements), (3) There is only ever maximum one 'if' and 'else', but can have any number of 'else if' statements.
 
-**For Loops**:
+**For Loops**:\
 General format:
 
 ``` C
@@ -272,7 +273,7 @@ int main()
   
 ```
 
-**Do-While Loop**:
+**Do-While Loop**:\
 General format:
 
 ``` C
@@ -294,12 +295,12 @@ int main()
 
 Note: The loop body is executed at least once, until *expression* in *while* loop is evaluated. If *expression* is True, the loop body is executed once more, and then *expression* is re-evaluted, and so on.
 
-**Functions**:
+**Functions**:\
 Functions must be declared before use:
 - Define the function ahead of all functions and then call it
 - Put a function prototype ahead of all functions that call the function
 
-Function Prototypes:
+Function Prototypes:\
 General format: `type fxn(type parameter1, type parameter2...);`
 
 Example:
