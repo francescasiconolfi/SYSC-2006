@@ -195,3 +195,30 @@ return 0
 ```
 
 Note: Statments are executed if *expression* is True.
+
+**If-Else Statements**:
+
+``` C
+
+int main()
+{
+
+  if (expression)
+  {
+    statement 1;
+    statment 2;
+  }
+  else 
+  {
+    statement 3;
+    statement 4;
+  }
+  
+return 0
+
+}
+
+```
+
+Notes: (1) `else` is executed if *expression* is False, (2) There is no elif keyword, so only have nested if statements (else if statements), (3) There is only ever maximum one 'if' and 'else', but can have any number of 'else if' statements.
+
