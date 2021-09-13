@@ -222,3 +222,111 @@ return 0
 
 Notes: (1) `else` is executed if *expression* is False, (2) There is no elif keyword, so only have nested if statements (else if statements), (3) There is only ever maximum one 'if' and 'else', but can have any number of 'else if' statements.
 
+**For Loops**:
+General format:
+
+``` C
+
+int main()
+{
+
+  for (expr1; expr2; expr3)
+  {
+    statements;
+  }
+  
+  // Furthermore:
+  
+  for (initial statement; condition; incrementation)
+  {
+    statements;
+  }
+  
+  // Is equivalent to:
+  
+  expr1;
+  while (expr2)
+  {
+    statements;
+    expr3;
+  }
+
+}
+
+```
+
+Example:
+
+``` C
+
+int main()
+{
+  int i;
+
+  for (i = 0; i < n; i = i + 1)
+  {
+    
+    printf("i is %d.\n", i)
+    
+}
+  
+```
+
+**Do-While Loop**:
+General format:
+
+``` C
+
+int main()
+{
+  do
+  {
+  
+  statement 1;
+  statement 2;
+  
+  }
+  while (expression);
+
+}
+  
+```
+
+Note: The loop body is executed at least once, until *expression* in *while* loop is evaluated. If *expression* is True, the loop body is executed once more, and then *expression* is re-evaluted, and so on.
+
+**Functions**:
+Functions must be declared before use:
+- Define the function ahead of all functions and then call it
+- Put a function prototype ahead of all functions that call the function
+
+Function Prototypes:
+General format: `type fxn(type parameter1, type parameter2...);`
+
+Example:
+
+``` C
+
+#include <stdio.h>
+
+int power(int m, int n); // Function prototype appears before calling, so no error
+
+int main(void):
+{
+  
+  int i = 0;
+  while (i < 10)
+  {
+    printf("%d %d %d\n", i, power(2, i), power(-3, i));
+    i = i + 1;
+  }
+
+  return 0
+ 
+}
+ 
+ ```
+ 
+ **Arguments**:
+All function arguments are passed by value.\
+Altering a parameter does not modify the corresponding argument.
+
