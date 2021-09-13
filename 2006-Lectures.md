@@ -174,7 +174,7 @@ Operands are converted to a common type before evaluation ("narrower" operands a
 - Any statements with *float*s will cause all operands to convert to *float*
 - Otherwise, *char* will be converted to *int*
 
-**If Statements**:\
+### If Statements
 General format:
 
 ``` C
@@ -196,7 +196,7 @@ return 0
 
 Note: Statments are executed if *expression* is True.
 
-**If-Else Statements**:\
+### If-Else Statements
 General format:
 
 ``` C
@@ -223,7 +223,7 @@ return 0
 
 Notes: (1) `else` is executed if *expression* is False, (2) There is no elif keyword, so only have nested if statements (else if statements), (3) There is only ever maximum one 'if' and 'else', but can have any number of 'else if' statements.
 
-**For Loops**:\
+### For Loops
 General format:
 
 ``` C
@@ -273,7 +273,7 @@ int main()
   
 ```
 
-**Do-While Loop**:\
+### Do-While Loop
 General format:
 
 ``` C
@@ -295,7 +295,7 @@ int main()
 
 Note: The loop body is executed at least once, until *expression* in *while* loop is evaluated. If *expression* is True, the loop body is executed once more, and then *expression* is re-evaluted, and so on.
 
-**Functions**:\
+### Functions
 Functions must be declared before use:
 - Define the function ahead of all functions and then call it
 - Put a function prototype ahead of all functions that call the function
@@ -341,9 +341,122 @@ int power(int base, int n)
 
 }
  
- ```
+```
  
 **Arguments**:\
 All function arguments are passed by value.\
 Altering a parameter does not modify the corresponding argument.
 
+### Example
+zyBooks Challenge 4.7.1:
+
+METHOD 1:
+
+``` C
+
+#include <stdio.h>
+
+int main()
+{
+  int userNum;
+  int i;
+  int j;
+  
+  userNum = 10;
+  
+  // print values from 0 - userNum, one per line with spaces, equal to the number being printed
+  
+  for (i = 0; i <= userNUm; i++)
+  {
+    for (j = 0; j < i; j++)
+    {
+      printf(" ");
+    }
+    printf("%d\n", i);
+  }
+
+}
+ 
+```
+
+METHOD 2:
+
+``` C
+
+#include <stdio.h>
+
+void printNspaces(int n)
+{
+  int i;
+  for  (i = 0; i < n; i ++)
+    {
+      printf(" ");
+    }
+}
+
+int main()
+{
+  int userNum;
+  int i;
+  int j;
+  
+  userNum = 10;
+  
+  // print values from 0 - userNum, one per line with spaces, equal to the number being printed
+  
+  for (i = 0; i <= userNUm; i++)
+  {
+    printNspaces(i);
+    printf("%d\n", i);
+  }
+
+}
+
+```
+
+METHOD 3:
+
+``` C
+
+#include <stdio.h>
+
+void printNspaces(int n)
+{
+  int i;
+  for  (i = 0; i < n; i ++)
+    {
+      printf(" ");
+    }
+}
+
+int numDigits(int n)
+{
+  int count;
+  for (count = 0; n! = 0; count ++)
+  {
+    n = n / 10;
+  }
+  return count;
+}
+
+int main()
+{
+  int userNum;
+  int i;
+  int j;
+  
+  userNum = 10;
+  
+  // print values from 0 - userNum, one per line with spaces, equal to the number being printed
+  
+  for (i = 0; i <= userNUm; i++)
+  {
+    
+    printf("%*d\n", i + numDigits(i), i); // '*' is replaced by first value argument (i + numDigits(i)) and d is replaced by second (i)
+  }
+
+}
+
+```
+
+Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` is equivalent to `i = i + 1`, and decrementing by 1 can be represented by double subtraction signs (i.e. `i--` is equivalent to `i = i - 1`).
