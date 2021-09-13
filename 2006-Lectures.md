@@ -95,5 +95,5 @@ Analyzing Step-By-Step:
 - Statements in the function body are always enclosed in braces ({}) and indented (though indentation is not required by the compiler)
 - Statements are terminated by semicolons (;)
 
-3. Comments are enclosed by //* and /*/ if they span multiple lines and // if they span one
+3. Comments are enclosed by //* and */ if they span multiple lines and // if they span one
 
