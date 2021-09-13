@@ -449,7 +449,7 @@ int main()
   
   // print values from 0 - userNum, one per line with spaces, equal to the number being printed
   
-  for (i = 0; i <= userNUm; i++)
+  for (i = 0; i <= userNum; i++)
   {
     
     printf("%*d\n", i + numDigits(i), i); // '*' is replaced by first value argument (i + numDigits(i)) and d is replaced by second (i)
