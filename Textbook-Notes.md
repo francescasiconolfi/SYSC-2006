@@ -132,6 +132,7 @@ The following is a list of character specifications recognized and read by print
 - `%c` represents a character value
 - `%s` represents a string value
 - `%%` represents the character '%'
+- `%e` represents values in scientific notation
 
 These character combinations also allows specification of character width, as well as decimal precision in the following format: `%#.#c`
 
