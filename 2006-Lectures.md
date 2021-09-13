@@ -129,6 +129,13 @@ Note: The body is only iterated over again if condition is True.
 - 1 in '%6.1f' specifies the value (celsius) will have 1 digit after its decimal point
 - The first value declared by % corresponds to the first variable listed after the str, and so on
 
+### Elements of C
 
-
+Fundamental Types:
+- char (character - usually a byte)
+- int (signed integer)
+- float (single-precision floating-point)
+- double (double-precision floating-point)
+- _Bool (Boolean - added in C99)
+- _Complex (Complex numbers - added in C99)
 
