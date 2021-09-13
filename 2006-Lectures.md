@@ -4,9 +4,10 @@
 
 ### Imperative Programming 
 Computation specified using statements that change the program's *state*.
-- The state is maintained using variables
-- Assignment statements change the program's state
-- Statements are executed sequentially
+
+The state is maintained using variables.\
+Assignment statements change the program's state.\
+Statements are executed sequentially.
 
 Some Terms:
 - *Loop*: Executes a sequence of statements multiple times
