@@ -14,6 +14,28 @@ Some Terms:
 - *Conditional Branch*: A sequence of statements are executed only if the condition is True
 - *Unconditional Branching*: jumps and subprograms/functions/procedures
 
+Example:
+
+In Python:
+
+``` Python
+
+print("Hello, world!")
+
+```
+
+In C:
+
+``` C
+
+int main()
+{
+  printf("Hello, world!\n");
+  return 0;
+}
+
+```
+
 
 
 
