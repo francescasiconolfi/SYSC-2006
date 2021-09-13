@@ -1,4 +1,7 @@
-# Table of Contents
+# SYSC 2006 LECTURES
+
+## Table of Contents
+[Lecture 2]()
 
 ## Lecture 2
 
