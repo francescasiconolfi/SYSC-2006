@@ -1,8 +1,8 @@
 # SYSC 2006 LECTURES
 
 ## Table of Contents
-[Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)
-[Lecture 3]()
+[Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)\
+[Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)
 
 ## Lecture 2
 
