@@ -2,6 +2,7 @@
 
 ## Table of Contents
 [Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)
+[Lecture 3]()
 
 ## Lecture 2
 
@@ -460,3 +461,20 @@ int main()
 ```
 
 Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` is equivalent to `i = i + 1`, and decrementing by 1 can be represented by double subtraction signs (i.e. `i--` is equivalent to `i = i - 1`).
+
+---
+
+## Lecture 3
+
+### 
+
+##### Table 1: Format specifiers for printf() and scanf() statements.
+| Format specifier | Data type | Notes |
+| --- | --- | --- |
+| %c | char | Prints/reads a single ASCII character |
+| %d | int | Prints/reads a decimal integer value |
+| %f | float | Prints/reads a float floating-point value |
+| %lf | double | Prints/reads a double floating-point value (lf = "long float") |
+| %s | string | Prints the contents of a string (literal or array) up to null character; reads a string of characters from input up to a whitespace character |
+| %% | percent | Prints the % character |
+
