@@ -473,6 +473,13 @@ Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` 
 | --- | --- | --- |
 | %c | char | Prints/reads a single ASCII character |
 | %d | int | Prints/reads a decimal integer value |
+| %hd | short | Prints/reads a short integer value |
+| %ld | long | Prints/reads a long integer value |
+| %lld | long long | Prints/reads a long long integer value |
+| %u | unsigned int | Prints/reads an unsigned integer |
+| %hu | unsigned short | Prints/reads an unsigned short integer | 
+| %lu | unsigned long | Prints/reads an unsigned long integer |
+| %llu | unsigned long long | Prints/reads an unsigned long long integer |
 | %f | float | Prints/reads a float floating-point value |
 | %lf | double | Prints/reads a double floating-point value (lf = "long float") |
 | %s | string | Prints the contents of a string (literal or array) up to null character; reads a string of characters from input up to a whitespace character |
