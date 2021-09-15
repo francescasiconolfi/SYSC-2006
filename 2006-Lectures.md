@@ -466,7 +466,7 @@ Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` 
 
 ## Lecture 3
 
-### 
+### Specifiers
 
 ##### Table 1: Format specifiers for printf() and scanf() statements.
 | Format specifier | Data type | Notes |
