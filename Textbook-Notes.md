@@ -143,6 +143,7 @@ The following is a list of character specifications recognized and read by print
 - `%s` represents a string value
 - `%%` represents the character '%'
 - `%e` represents values in scientific notation
+- `%u` represents an unsigned int
 
 These character combinations also allows specification of character width, as well as decimal precision in the following format: `%#.#c`
 
@@ -294,3 +295,28 @@ Convention and rules regarding variable names:
 - The underscore counts as a letter (but do not start the name with one)
 - Upper and lowercase are distinct; lowercase is convention for variables, while upper case is convention for symbolic constants
 
+### Section 2.2: Data Types and Sizes
+Recall:
+- char (a single byte; one character)
+- int (an integer)
+- float (single-precision floating point)
+- double (double-precision floating point)
+
+which can all be modified by qualifiers, including but not limited to:
+- short (applies to integers)
+- long (applies to integers)
+- long long (applies to integers)
+- const (can be used instead of #define to declare a symbolic constant)
+- signed (applies to char or any int)
+- unsigned (declares numbers to be >= 0)
+
+### 2.3: Constants
+The value of an int can be specified to be in octal or hexidecimal with the following specifications:
+- A leading **0** on an int constant puts it in *octal*
+- A leading **0x** or **0X** on an int constant puts it in *hexidecimal*
+- Octal/hexidecimal constants can be followed directly by L to declare them long and/or U to declare them unsigned
+
+Examples:
+
+1. (25)<sub>10</sub> is simply `25` in C, while (31)<sub>8</sub> would be `031`
+2. (31)<sub>8</sub> is equivalent to 0X19, or 19<sub>16</sub>
