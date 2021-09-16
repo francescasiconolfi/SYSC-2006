@@ -11,6 +11,7 @@ Notes will follow the format of the assigned textbook, *The C Programming Langua
 ## Sections
 
 [Textbook Notes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md)\
+[Lecture Notes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md)
 [C Language Practice]()
 
 
