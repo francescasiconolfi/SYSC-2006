@@ -320,3 +320,4 @@ Examples:
 
 1. (25)<sub>10</sub> is simply `25` in C, while (31)<sub>8</sub> would be `031`
 2. (31)<sub>8</sub> is equivalent to 19<sub>16</sub>, which is represented as `0X19` in C
+3. `0X1BUL` means the number is an unsigned long hexadecimal 1B, or (27)<sub>10</sub>
