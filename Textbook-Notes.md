@@ -321,3 +321,28 @@ Examples:
 1. (25)<sub>10</sub> is simply `25` in C, while (31)<sub>8</sub> would be `031`
 2. (31)<sub>8</sub> is equivalent to 19<sub>16</sub>, which is represented as `0X19` in C
 3. `0X1BUL` means the number is an unsigned long hexadecimal 1B, or (27)<sub>10</sub>
+
+#### Character Constants
+A character constant is an integer written as a single character within **single quotations**. Its actual value is the numeric value of the written character in the machine's character set (i.e. 'A' has the ASCII value 065, and would be interpreted as such due to the **single quotations**).
+
+Note: String literals are surrounded by double quotes, and are not equivalent to character constants. They are actually arrays of characters with an internal representation of a null character at each of their ends, so physical storage is always one more than the number of characters in the string.
+
+**REMEMBER**: 'x' != "x"
+
+#### A Complete List of Escape Sequences
+The following is a list of escape sequences:
+- `\a` (alert/bell)
+- `\b` (backspace)
+- `\f` (formfeed)
+- `\n` (newline)
+- `\r` (carriage return)
+- `\t` (horizontal tab)
+- `\v` (vertical tab)
+- `\\` (backslash)
+- `\?` (question mark)
+- `\'` (single quote)
+- `\"` (double quote)
+- `\ooo` (octal number)
+- `\xhh` (hexadecimal number, where x is actually written)
+
+Note: The character constant '/0' represents the character with value zero - *the null character*. The numeric value is actually 0.
