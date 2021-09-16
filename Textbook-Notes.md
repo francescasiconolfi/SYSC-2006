@@ -9,8 +9,18 @@
 [Section 1.1: Getting Started](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-11-getting-started)\
 [Section 1.2: Variables and Artihmetic Expressions](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-12-variables-and-arithmetic-expressions)\
 [Section 1.3: The For Statement](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-13-the-for-statement)\
-[Section 1.4: Symbolic Constants]()
+[Section 1.4: Symbolic Constants](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-14-symbolic-constants)
 
+</details>
+
+<details>
+    
+<summary> Chapter 2: Types, Operators, and Expressions </summary>
+    
+[Section 2.1: Variable Names]()\
+[Section 2.2]()\
+[Section 2.3]()
+    
 </details>
 
 ## Chapter 1: Introduction
@@ -275,4 +285,12 @@ main()
 
 }
 ```
+
+## Chapter 2: Types, Operators, and Expressions
+
+### Section 2.1: Variable Names
+Convention and rules regarding variable names:
+- The first character must be a letter
+- The underscore counts as a letter (but do not start the name with one)
+- Upper and lowercase are distinct; lowercase is convention for variables, while upper case is convention for symbolic constants
 
