@@ -15,7 +15,7 @@
 
 <details>
     
-<summary> Chapter 2: Types, Operators, and Expressions </summary>
+<summary>Chapter 2: Types, Operators, and Expressions </summary>
     
 [Section 2.1: Variable Names]()\
 [Section 2.2]()\
