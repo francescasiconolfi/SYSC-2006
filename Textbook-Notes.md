@@ -319,4 +319,4 @@ The value of an int can be specified to be in octal or hexidecimal with the foll
 Examples:
 
 1. (25)<sub>10</sub> is simply `25` in C, while (31)<sub>8</sub> would be `031`
-2. (31)<sub>8</sub> is equivalent to 0X19, or 19<sub>16</sub>
+2. (31)<sub>8</sub> is equivalent to 19<sub>16</sub>, which is represented as `0X19` in C
