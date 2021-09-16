@@ -18,7 +18,7 @@
 <summary>Chapter 2: Types, Operators, and Expressions </summary>
     
 [Section 2.1: Variable Names]()\
-[Section 2.2]()\
+[Section 2.2: Data Types and Sizes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-22-data-types-and-sizes)\
 [Section 2.3]()
     
 </details>
