@@ -406,4 +406,6 @@ Precedence:
 
 The following is a list of logical operators:
 - && (AND)
-- 
+- || (OR)
+
+Note: Expressions with relational operators are evaluated left to right, and evaluation stops as soon as the truth or falsehood is known.
