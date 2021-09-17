@@ -353,3 +353,14 @@ Note: The character constant '/0' represents the character with value zero - *th
 #### The Enumeration Constant
 An enumeration is a list of constant integer values, where the first name in an enum has value 0, the second has value 1, the third has value 2... and so on. This is true unless the values are specified. If not all are specified, the unspecified values will continue progression from last value (i.e. if first value is 1, second is 2, and so on).
 
+General format:
+
+``` C
+
+main()
+{
+
+    enum name { variable1 = int1, variable2 = int2, variable3 = int3 };
+    
+}
+```
