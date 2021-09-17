@@ -408,4 +408,12 @@ The following is a list of logical operators:
 - && (AND)
 - || (OR)
 
-Note: Expressions with relational operators are evaluated left to right, and evaluation stops as soon as the truth or falsehood is known.
+Precedence:
+Relational and equality operators > **&&** > **||**
+
+Notes: (1) Expressions with relational operators are evaluated left to right, and evaluation stops as soon as the truth or falsehood is known, (2) Assignment has lower precedence than all operators except ',' which simply enforces sequential evaluation, (3) The numeric value of a relational/logical expression is 1 if True and 0 if False, (4) The unary negation operator (!) converts a non-zero operand into 0 and a zero operand into 1.
+
+Example: 
+`if (!valid)` is equivalent to `if (valid == 0)`
+
+### Section 2.7: Type Conversions
