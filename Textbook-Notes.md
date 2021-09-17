@@ -364,3 +364,46 @@ main()
     
 }
 ```
+
+### Section 2.4: Declarations
+All variables must be declared before use.
+
+General formatting:\
+Of a single declaration: `type variable;`
+Of a multi-declaration: `type variable1, variable2;`
+Of a single initialization: `type variable = value;`
+
+Example:
+`char cheese[4] = "good";`
+
+The qualifier *const* can be applied to the declaration of any variable to specify its value will not be changed.\
+In an array, the *const* qualifier says the elements will not be altered; it can also be used with array arguments.
+
+### Section 2.5: Arithmetic Operators
+The following is a list of binary arithmetic operators:
+- + (addition)
+- - (subtraction)
+- * (multiplication)
+- / (integer division)
+- % (modulus)
+
+Notes: (1) The modulus operator cannot be applied to floats/doubles, (2) If one operand is a float/double when dividing, the other becomes automatically converted to a float/double, and division is performed with decimals.
+
+Precedence:
+**\*, /, %** > **+, -**
+
+### Section 2.6: Relational and Logical Operators
+The following is a list of relational operators:
+- > (greater than)
+- < (less than)
+- >= (greater than or equal to)
+- <= (less than or equal to)
+- == (equal)
+- != (not equal)
+
+Precedence:
+**>, <, >=, <=** > **==, !=**
+
+The following is a list of logical operators:
+- && (AND)
+- 
