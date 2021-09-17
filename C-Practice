@@ -1,6 +1,6 @@
 // SATURDAY SEPT 11, 2021
 
-Declaring constants:
+// Declaring constants:
 
 # include <stdio.h>
 
@@ -18,11 +18,11 @@ main()
   
 }
 
----
+
 
 // THURSDAY SEPT 16, 2021
 
-Using fxn strlen():
+// Using fxn strlen():
 
 # include <string.h>
 
@@ -35,7 +35,9 @@ main()
   return 0;
 }
 
-Defining enumeration constants:
+
+
+// Defining enumeration constants:
 
 # include <stdio.h>
 
