@@ -347,4 +347,9 @@ The following is a list of escape sequences:
 
 Note: The character constant '/0' represents the character with value zero - *the null character*. The numeric value is actually 0.
 
+#### The Function strlen()
+`strlen(char)` returns the length of its character str argument, *char*, excluding the null character '\0'.
+
+#### The Enumeration Constant
+An enumeration is a list of constant integer values, where the first name in an enum has value 0, the second has value 1, the third has value 2... and so on. This is true unless the values are specified. If not all are specified, the unspecified values will continue progression from last value (i.e. if first value is 1, second is 2, and so on).
 
