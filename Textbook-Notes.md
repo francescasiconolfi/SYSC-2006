@@ -21,8 +21,8 @@
 [Section 2.2: Data Types and Sizes](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-22-data-types-and-sizes)\
 [Section 2.3: Constants](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#23-constants)\
 [Section 2.4: Declarations](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-24-declarations)\
-[Section 2.5: Arithmetic Operators]()
-[Section 2.6: Relational and Logical Operators]()
+[Section 2.5: Arithmetic Operators](https://github.com/francescasiconolfi/SYSC-2006/blob/main/Textbook-Notes.md#section-25-arithmetic-operators)\
+[Section 2.6: Relational and Logical Operators]()\
 [Section 2.7: Type Conversions]()
     
 </details>
