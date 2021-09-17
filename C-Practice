@@ -16,5 +16,16 @@ main()
   
 }
 
-// MONDAY SEPT 13, 2021
+// THURSDAY SEPT 16, 2021
+
+# include <string.h>
+
+main()
+{
+  int len = strlen("hello world");
+  
+  printf("The number of characters in \"hello world\" is %d", len);
+  
+  return 0;
+}
 
