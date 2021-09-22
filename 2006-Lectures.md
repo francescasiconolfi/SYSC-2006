@@ -545,7 +545,7 @@ int main()
 int main(void) {
 
   const int LEN = 6;
-  int arr[] = [1, 5, 3, 4, 5, 2};
+  int arr[] = [1, 5, 3, 4, 5, 2}; // creates array with exact necessary size according to amount of elements listed
   int sum = 0;
   double mean, median;
   
@@ -570,6 +570,11 @@ int main(void) {
 ```
 
 **ADD CODE TO FIND MODE (most common element of an array) ; hint: how many times each element occurs**
+
+### Computer Memory Notes
+When a function is called by, i.e. main(), or any function, the other function is used and accessed until the computer is finished with it, and then it is removed from the stack.
+
+**Remember** if a function calls another that is below it, must include a function prototype above: `type function(type p1, type p2);`.
 
 
 
