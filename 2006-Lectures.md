@@ -2,7 +2,8 @@
 
 ## Table of Contents
 [Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)\
-[Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)
+[Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)\
+[Lecture 5]()
 
 ## Lecture 2
 
@@ -485,3 +486,84 @@ Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` 
 | %s | string | Prints the contents of a string (literal or array) up to null character; reads a string of characters from input up to a whitespace character |
 | %% | percent | Prints the % character |
 
+---
+
+## Lecture 5
+
+### Array Example
+``` C
+int main()
+  
+  // const int LENGTH = 10;
+  #define LENGTH 10
+  int array[LENGTH];
+  int i, j, temp, index;
+  
+  // initialize array
+  for (i = 0; i < LENGTH; i++) {
+    array[i] = i + 1;
+  }
+  
+  // print array
+  printf("Initial Array: ");
+  for (i = 0; i < LENGTH; i++) {
+    printf("%d ", array[i]);
+  }
+  
+  printf("\n");
+  
+  // reverse array
+  for (i = 0; i < LENGTH/2; i++) {
+    index = LENGTH - i - 1;
+    temp = array[i];
+    array[i] = array[index];
+    array[index] = temp;
+    
+    // print array
+    printf("Intermediate Array: step %d: ", i + 1);
+    for (j = 0; j < LENGTH; j++) {
+      printf("%d ", array[j]); // shows array after each step
+    }
+    printf("\n");
+  }
+  
+  // print array
+  printf("Final Array: ");
+  for (i = 0; i < LENGTH; i++) {
+    printf("%d ", array[i]);
+  }
+  printf("\n");
+  
+  return 0;
+  
+```
+
+### Finding Mean and Median of An Array Example
+
+``` C
+
+int main(void) {
+
+  const int LEN = 6;
+  int arr[] = [1, 5, 3, 4, 5, 2};
+  int sum = 0;
+  double mean, median;
+  
+  for (int i = 0; i < LEN; i+= 1) { // i only exists inside for loop, since it is initialized inside
+    sum += arr[i];
+  }
+  
+  mean = sum / (LEN*1.0); // do not want int division
+  
+  sort(LEN, arr); // function that sorts data (not shown here)
+  
+  if (LEN % 2 == 0) {
+    median = (arr[LEN/2] + arr[LEN/2 - 1] / 2.0;
+  }
+  else { // array is odd
+    median = arr[LEN/2];
+  }
+  
+  return 0;
+  
+}
