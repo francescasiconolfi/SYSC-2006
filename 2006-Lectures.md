@@ -3,7 +3,7 @@
 ## Table of Contents
 [Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)\
 [Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)\
-[Lecture 4]()\
+[Lecture 4](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-4)\
 [Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)
 
 ## Lecture 2
