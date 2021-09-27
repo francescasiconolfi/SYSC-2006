@@ -734,9 +734,9 @@ Given the declaration of *point*, `struct point point1 point2` declares variable
 
 Visualizing the structures:
 
-| | struct point | | struct point|
-| --- | --- | --- | --- |
-| point1 | x int ? | point 2 | x int ? |
-| | y int ? | | y int ? |
+| | struct point | | | struct point|
+| --- | --- | --- |  --- | --- |
+| point1 | x int ? | | point 2 | x int ? |
+| | y int ? | | | y int ? |
 
 
