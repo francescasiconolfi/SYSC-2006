@@ -3,6 +3,7 @@
 ## Table of Contents
 [Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)\
 [Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)\
+[Lecture 4]()\
 [Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)
 
 ## Lecture 2
@@ -488,6 +489,74 @@ Note: Incrementing by 1 can be represented by double addition signs (i.e. `i++` 
 
 ---
 
+## Lecture 4
+
+### Do-While Statement
+General format:
+
+``` C
+
+int main()
+{
+  do {
+    Y;
+ } while (condition);
+ 
+\\ is equivalent to:
+
+  Y;
+  while (condition) {
+    Y;
+  }
+  
+```
+
+### For Loop
+General format:
+
+``` C
+
+int main()
+{
+  for (initialization; condition; incrementation) {
+    body;
+  }
+  
+}
+
+```
+
+### Arrays
+Declaration format: `type name[capacity]`
+where # elements in array == *capacity* and each element is of the same specified *type*
+
+**Indicies:**
+- To access inidividual elements, use indexing (specify index in brackets), where indicies ranges from 0 to (*capacity* - 1) (i.e. array[1] points to the array's second element).
+- An index that is negative or (>= *capacity*) will access memory outside of the array (do not want this).
+- Indicies can also be expressions or function calls
+
+Array processing loops:
+``` C
+
+int main()
+{
+  for (int i = 0; i < n; i++) {
+    \\ do something with array
+  }
+
+}
+```
+
+If using array in a function:
+- First parameter: `type name[]` where *capacity* is not specified
+- Second parameter: `int n` where n is the # of elements the function should process
+
+Notes: (1) When using an array as an argument (i.e. actually calling the function), only the array's name is necessary, (2) Arrays are passed by reference (i.e. functions can actually modify arrays.
+
+Other note: sizeof() is a function that evaluates the amount of memory allocated to an array (or just one element if indexed).
+
+---
+
 ## Lecture 5
 
 ### Array Example
@@ -576,6 +645,9 @@ When a function is called by, i.e. main(), or any function, the other function i
 
 **Remember** if a function calls another that is below it, must include a function prototype above: `type function(type p1, type p2);`.
 
+---
+
+## Lecture 6
 
 
 
