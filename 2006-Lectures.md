@@ -721,12 +721,12 @@ One of more variables grouped together under a single name (types can differ). T
 General format:
 ``` C
 
-struct point {
+struct tag {
   type var1;
   type var2;
 }
 ```
-where var1 and var2 are members of the structure, and *point* is a **tag**, not a variable name
+where var1 and var2 are members of the structure, and *tag* is name of tag.
 
 Note: A structure declaration doesn't allocate memory.
 
@@ -739,4 +739,61 @@ Visualizing the structures:
 | point1 | x int ? | point 2 | x int ? |
 | | y int ? | | y int ? |
 
+#### Initializing members of the structure:
+`struct point point3 = {val1, val2}` assigns val1 to x and val2 to y.
+OR
+`point4 = (struct point) {val1, val2}` where point4 was previously declared as a struct point.
+
+#### To declare a synonym for struct point:
+`typedef struct point point_t` uses typedef ("type definition") to create synonym for struct point, in order to make it more concise.
+
+Combining structure and typedef declarations:
+``` C
+
+typedef struct tag {
+  type var1;
+  type var2
+} synonym;
+
+```
+
+#### Accessing Members:
+General format: `variable.member = expression`
+
+Example:
+`point3.x += 20;`
+
+Note: This becomes a regular int.
+
+#### Structure Assignment
+Can assign one variable to another, which will copy x, y, etc. values over (i.e. point1 = point2;)
+
+#### Structures and Functions
+``` C
+
+point_t makepoint(int x, int y) {
+  point_t temp;
+  
+  temp.x = x;
+  temp.y = y;
+  return temp;
+}
+```
+
+Typical call:
+
+``` C
+
+int main() {
+
+  int a, b;
+  point_t point1;
+  
+  a = 320;
+  b = 200;
+  
+  point1 = makepoint(a, b);
+  
+}
+```
 
