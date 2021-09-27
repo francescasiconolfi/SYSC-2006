@@ -734,10 +734,10 @@ Given the declaration of *point*, `struct point point1 point2` declares variable
 
 Visualizing the structures:
 
-        ______________
-point1 | struct point |
-       |   \_\_\_\_\_    |
-       | x | int |    |
-       |   |  ?  |    |
-       | y | int |    |
+        ______________\
+point1 | struct point |\
+       |   \_\_\_\_\_    |\
+       | x | int |    |\
+       |   |  ?  |    |\
+       | y | int |    |\
        |\_\_\_|\_\_\_?\_\_\_|    |
