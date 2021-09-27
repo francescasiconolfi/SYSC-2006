@@ -732,7 +732,7 @@ Note: A structure declaration doesn't allocate memory.
 
 Given the declaration of *point*, `struct point point1 point2` declares variables point1 and point2 as instances of type "struct point".
 
-| | struct point | struct point | |
+| | struct point | | struct point |
 | --- | --- | --- | --- |
 | point 1 | x int ? | point 2 | x int ? |
 | | y int ? | | y int ? |
