@@ -4,7 +4,8 @@
 [Lecture 2](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-2)\
 [Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)\
 [Lecture 4](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-4)\
-[Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)
+[Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)\
+[Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)
 
 ## Lecture 2
 
@@ -553,7 +554,7 @@ If using array in a function:
 
 Notes: (1) When using an array as an argument (i.e. actually calling the function), only the array's name is necessary, (2) Arrays are passed by reference (i.e. functions can actually modify arrays.
 
-Other note: sizeof() is a function that evaluates the amount of memory allocated to an array (or just one element if indexed).
+Other note: sizeof() is a function that evaluates the amount of memory allocated to an array (or just one element if indexed) (int takes up 4 bytes; a pointer takes up 8).
 
 ---
 
@@ -638,7 +639,45 @@ int main(void) {
 }
 ```
 
-**ADD CODE TO FIND MODE (most common element of an array) ; hint: how many times each element occurs**
+### Finding Mode of An Array
+
+``` C
+
+int numTimes(int ar[], int n, int value) {
+  int count = 0;
+  for(int i= 0; i < n; i++) {
+    if (ar[i] == value) {
+      count += 1;
+    }
+  }
+  
+  return count;
+}
+
+int main(void)
+{
+
+  const int LEN = 6;
+  int arr[] = {1, 5, 3, 4, 5, 2};
+  int x = numTimes(arr, LEN, 3);
+  int mode;
+  int num;
+  int temp;
+  
+  num = numTimes(arr, LEN, arr[0]);
+  mode = arr[0];
+  
+  for (int i = 1; i < LEN; i++) {
+     temp = numTimes(arr, LEN, arr[i]);
+     if (temp < num) {
+      num = temp;
+      mode = arr[i];
+     }
+  }
+  
+  return 0;
+} 
+```
 
 ### Computer Memory Notes
 When a function is called by, i.e. main(), or any function, the other function is used and accessed until the computer is finished with it, and then it is removed from the stack.
@@ -648,6 +687,33 @@ When a function is called by, i.e. main(), or any function, the other function i
 ---
 
 ## Lecture 6
+
+Recall: Declaring Arrays
+Method 1. Specifying Capacity
+
+``` C
+
+int main()
+{
+  
+  type array[capacity];
+}
+
+```
+
+Method 2. Initializing List
+
+``` C
+
+int main()
+{
+  
+  type array[] = {1, 2, 3, 4, 5, 6};
+}
+
+```
+
+where capacity is calculated based on how many values are in initializer list
 
 
 
