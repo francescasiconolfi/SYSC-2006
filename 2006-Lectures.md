@@ -688,7 +688,7 @@ When a function is called by, i.e. main(), or any function, the other function i
 
 ## Lecture 6
 
-Recall: Declaring Arrays
+### Recall: Declaring Arrays
 Method 1. Specifying Capacity
 
 ``` C
@@ -715,5 +715,24 @@ int main()
 
 where capacity is calculated based on how many values are in initializer list
 
+### Structures
+One of more variables grouped together under a single name (types can differ). This allows a group of related variables to be treated as a unit.
 
+General format:
+``` C
 
+struct point {
+  type var1;
+  type var2;
+}
+```
+where var1 and var2 are members of the structure, and *point* is a **tag**, not a variable name
+
+Note: A structure declaration doesn't allocate memory.
+
+Given the declaration of *point*, `struct point point1 point2` declares variables point1 and point2 as instances of type "struct point".
+
+| | struct point | struct point | |
+| --- | --- | --- | --- |
+| point 1 | x int ? | point 2 | x int ? |
+| | y int ? | | y int ? |
