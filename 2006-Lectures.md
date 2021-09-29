@@ -882,6 +882,22 @@ int main() {
 
 assigns the address of x to variable p
 
-Therefore, p now **points to** x, which contains int 1:         p -> | 1 | x
+Therefore, p now **points to** x, which contains int 1: p -> | 1 | x
 
 To make another var equal to the value p points to: `y = *p;`
+Note: Types have to match.
+
+To change the variable p is pointing to: `*p = val`
+
+\*p and x are SYNONYMS, so anywhere you would put x, you can put \*p.
+
+Can also assign a pointer to another pointer:
+``` C
+  int *p2;
+  p2 = p;
+```
+p2 and p now point to the same memory location
+
+#### Precedence
+'&' and '\*' have higher precedence than arithmetic, comparison, and logical operators.
+
