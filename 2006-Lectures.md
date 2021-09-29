@@ -920,3 +920,4 @@ int main() {
     return 0;
 }
 ```
+Note: Making temp a pointer will not work, since it does not have an initial value. Would have to make it point to something first, before you can assign it to the same val as another pointer.
