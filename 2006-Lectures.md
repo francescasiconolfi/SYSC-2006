@@ -5,7 +5,8 @@
 [Lecture 3](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-3)\
 [Lecture 4](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-4)\
 [Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)\
-[Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)
+[Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)\
+[Lecture 7](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-7)
 
 ## Lecture 2
 
@@ -801,7 +802,7 @@ int main() {
 
 ## Lecture 7
 
-### Structures Review
+### Structures Example
 
 ``` C
 
@@ -811,12 +812,35 @@ typedef struct {
   double GPA;
 } student_t;
 
+void printStudent(student_t student) {
+  printf("Student Name: %d; Credits: %.1lf; GPA: %.2lf\n", student.number, student.credits, student.GPA);
+}
+
+student_t addCredit(student_t student, double credits, double numGrade) {
+  
+  double newCredits = student.credits + credits;
+  student.GPA = ((student.credits * student.GPA) + (newCredits * newGrade)) / newCredits;
+  student.credits = newCredits;
+  
+  return student;
+}
+
 int main() {
   student_t bob = {123456789, 0, 0};
   student_t mary, fred;
   mary = (student_t) {123444444, 1, 10};
   fred.number = 123123123;
   
+  printStudent(bob);
+  
+  bob = addCredit(bob, 1, 10);
+  printStudent(bob);
+  
+  bob = addCredit(bob, 0.5, 12);
+  printStudent(bob);
+  
+  bob = addCredit(bob, 0.5, 6);
+  printStudent(bob);
   
   return 0;
 }
