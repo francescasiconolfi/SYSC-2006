@@ -797,3 +797,27 @@ int main() {
 }
 ```
 
+---
+
+## Lecture 7
+
+### Structures Review
+
+``` C
+
+typedef struct {
+  int number;
+  double credits;
+  double GPA;
+} student_t;
+
+int main() {
+  student_t bob = {123456789, 0, 0};
+  student_t mary, fred;
+  mary = (student_t) {123444444, 1, 10};
+  fred.number = 123123123;
+  
+  
+  return 0;
+}
+```
