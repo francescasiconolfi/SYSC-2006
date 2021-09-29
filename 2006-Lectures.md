@@ -847,3 +847,41 @@ int main() {
   return 0;
 }
 ```
+
+### Pointers
+
+#### Memory Organization
+Memory can be viewed as a collection of consecutively-numbered cells, where:
+- each cell holds an 8-bit byte
+- a char is stored in one cell
+- a 32-bit int is stored in 4 adjacent cells
+- cell numbers are known as *addresses*
+- a variable is a symbolic name for a group of cells
+- a **pointer** is a variable that contains the address of a variable
+
+#### Declaration of Pointers
+General format: `type *var;`
+
+where *type* is "pointer to int"
+
+Can also write `type* var;` if declaring only one variable.
+
+#### Address-of Operator
+`&` is a unary operator that yields the address of its operand.
+
+Example:
+``` C
+
+int main() {
+
+  int *p;
+  int x = 1, y = 2;
+  p = &x;
+}
+```
+
+assigns the address of x to variable p
+
+Therefore, p now **points to** x.
+
+p |\_| -> |1| x
