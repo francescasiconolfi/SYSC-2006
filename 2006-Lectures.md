@@ -901,3 +901,22 @@ p2 and p now point to the same memory location
 #### Precedence
 '&' and '\*' have higher precedence than arithmetic, comparison, and logical operators.
 
+#### Pointers and Functions
+Integers are not called by reference in functions, so the actual value of the argument variables are not affected. Must use pointers to actually modify the values.
+
+Swapping function:
+``` C
+  void swap(int *px, int *py) {
+    int temp;
+    
+    temp = *px; // sets val of temp to val px points to (5)
+    *px = *py; // make var px points to equal to the val py points to (a now contains 10)
+    *py = temp; // make val py points to equal to same value as temp (b now contains 5)
+}
+ 
+int main() {
+    int a = 5, b = 10;
+    swap(&a, &b);
+    return 0;
+}
+```
