@@ -823,6 +823,8 @@ student_t addCredit(student_t student, double credits, double numGrade) {
   student.credits = newCredits;
   
   return student;
+  
+  // or: return (student_t) {student.number, newCredits, ((student.credits * student.GPA) + (newCredits * newGrade)) / newCredits};
 }
 
 int main() {
