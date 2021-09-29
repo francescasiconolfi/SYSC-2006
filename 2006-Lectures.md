@@ -883,5 +883,5 @@ int main() {
 assigns the address of x to variable p
 
 Therefore, p now **points to** x.
-
-p |\_| -> |1| x
+   ____      ___
+p |\_\_\_| -> | 1 | x
