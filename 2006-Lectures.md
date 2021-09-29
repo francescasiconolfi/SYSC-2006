@@ -882,6 +882,6 @@ int main() {
 
 assigns the address of x to variable p
 
-Therefore, p now **points to** x.
-   ____      ___
-p |\_\_\_| -> | 1 | x
+Therefore, p now **points to** x, which contains int 1:         p -> | 1 | x
+
+To make another var equal to the value p points to: `y = *p;`
