@@ -995,6 +995,7 @@ Do not want to pass structures as function arguments since the function has to c
 
 Instead, pass pointers to structures as function arguments.
 
+Version 1:
 ``` C
 
 typedef struct {
@@ -1003,7 +1004,7 @@ typedef struct {
 } point_t;
 
 void addpoints(point_t* ptr1, const point_t* ptr2) { 
-    // putting "const" is good documentation, does not allow changes, and makes code more efficient
+    // putting "const" is good documentation, does not allow changes to the struct, and makes code more efficient
     
     ptr1->x = ptr1->x + ptr2->x;
     ptr1->y = ptr1->y + ptr2->y;
@@ -1021,3 +1022,58 @@ int main() {
   
 }
 ```
+
+Version 2:
+``` C
+// What if we don't want the function to modify point1?
+
+void addpoints(const point_t* ptr1, const point_t* ptr2, point_t* sum) {
+  sum->x = ptr1->x + ptr2->x;
+  sum->y = ptr1->y + ptr2->y;
+}
+
+#### Returning a Pointer
+
+The following is a function that returns a POINTER pointing to a value of TYPE "point_t".
+``` C
+
+point_t* addpoints(const point_t* ptr1, const point_t* ptr2) { // can also put a space between point_t and the asterisk
+  point_t sum;
+  sum.x = ptr1->x + ptr2->x;
+  sum.y = ptr1->y 
+  
+  return &sum; // this is a BUG since it is a local variable and will disappear from the stack
+}
+
+To actually make this work, allocate the structure on the HEAP (coming soon).
+
+#### Pointers and Arrays
+``` C
+
+  int a[10] // declares an array with 10 int elements
+  
+  int *pa;
+  pa = &a[0]; // pa points to element 0 in array a
+  
+  int x = 3;
+  *pa = x; // copies contents of x into a[0]
+```
+
+**Pointer Artihmetic**:
+pa+1 is the address of the next element
+pa+i is the address of the i-th element after the one pa points to
+
+So:
+- if `pa = &a[0];`
+- `pa+1` is the address of a[1]
+- \*(pa+1) is the contents of a[1]
+- pa+i is the address of a[i]
+- \*(pa+i) is the contents of a[i]
+
+The name of an array is a synonym for the address of its 0th element.\
+This means: `pa = &a[0];` can be written as `pa = a;`.\
+Therefore the value of a+i is the address of the i-th element after a\[0], and \*(a+i) is the contents of the i-th element after a[0].\
+This means `*(a+i)` is equivalent to `a[i]`.\
+Can also do so with a pointer: `pa[i]` is equivalent to `*(pa+i)`.
+
+An important difference between points and array names: an array can not be assigned to a pointer: `a = pa;` is not permitted
