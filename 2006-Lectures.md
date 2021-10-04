@@ -1074,6 +1074,34 @@ The name of an array is a synonym for the address of its 0th element.\
 This means: `pa = &a[0];` can be written as `pa = a;`.\
 Therefore the value of a+i is the address of the i-th element after a\[0], and \*(a+i) is the contents of the i-th element after a[0].\
 This means `*(a+i)` is equivalent to `a[i]`.\
-Can also do so with a pointer: `pa[i]` is equivalent to `*(pa+i)` aka **you can index pointers like you do arrays**.
+Can also do so with a pointer: `pa[i]` is equivalent to `*(pa+i)` a.k.a. **you can index pointers like you do arrays**.
 
 An important difference between points and array names: an array can not be assigned to a pointer: `a = pa;` is not permitted
+
+#### Arrays as Arguments
+Example: Avg of an array of ints
+
+``` C
+
+double average(int data[], int n) {
+  double sum = 0;
+  int i;
+  
+  for (i = 0; i < n; i++) {
+    sum = sum + data[i];
+  }
+  
+  return sum / n;
+}
+```
+
+An array name used as a fxn argument causes C to pass the address of the 0th element:
+
+``` C
+double average(int data[], int n); // where data is a pointer that points to the array in its argument place when the fxn is called
+int samples[100];
+
+average(samples, 50);
+// is converted to
+average(&samples[0], 50);
+```
