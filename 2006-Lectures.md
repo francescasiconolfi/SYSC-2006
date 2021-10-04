@@ -6,7 +6,8 @@
 [Lecture 4](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-4)\
 [Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)\
 [Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)\
-[Lecture 7](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-7)
+[Lecture 7](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-7)\
+[Lecture 8]()
 
 ## Lecture 2
 
@@ -921,3 +922,31 @@ int main() {
 }
 ```
 Note: Making temp a pointer will not work, since it does not have an initial value. Would have to make it point to something first, before you can assign it to the same val as another pointer.
+
+---
+
+## Lecture 8
+
+Example: Pointers to pointers
+
+``` C
+
+int main() {
+  int x;
+  int *p;
+  int **q;
+  int ***r;
+  
+  x = 5;
+  p = &x;
+  q = &p;
+  r = &q;
+  
+  printf("*p=%d; **q=%d; ***r=%d\n". *p, **q, ***r);
+  
+  return 0
+  
+}
+
+Note: More asterisks indicates more levels of pointers (i.e. int **q is a pointer to a pointer to an int).
+
