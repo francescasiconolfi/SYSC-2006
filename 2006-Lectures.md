@@ -975,3 +975,49 @@ Notes:
 - (\*ptr).x and (\*ptr).y are the members
 - (\*ptr).x is read as "the x member of the structure pointed to by ptr"
 - parentheses are required since the dot operator has higher precedence than the asterisk: \*ptr.x means \*(ptr.x) which is an error since it would be trying to access the x member of ptr, not the value ptr points to
+
+#### -> Operator
+`ptr->member` is shorthand for `(*ptr).member` (if ptr points to a structure).
+
+Example:
+``` C
+ 
+  point_t* ptr;
+  point_t point1;
+  ...
+  ptr = &point1;
+  ptr->x = 320; // equivalent to (*ptr).x = 320;
+  ptr->y = 200; // equivalent to (*ptr).y = 200;
+```
+
+#### Function Arguments
+Do not want to pass structures as function arguments since the function has to copy the entire structure to use it, which uses a lot of memory and time (pass-by-value semantics).
+
+Instead, pass pointers to structures as function arguments.
+
+``` C
+
+typedef struct {
+  int x;
+  int y;
+} point_t;
+
+void addpoints(point_t* ptr1, const point_t* ptr2) { 
+    // putting "const" is good documentation, does not allow changes, and makes code more efficient
+    
+    ptr1->x = ptr1->x + ptr2->x;
+    ptr1->y = ptr1->y + ptr2->y;
+    
+}
+
+int main() {
+
+  // typical call:
+  point_t point1, point2;
+  point1 = makepoint(320, 200); // or point_t point1 = {320, 200};
+  point2 = makepoint(30, 40);
+  
+  addpoints(&point1, &point2);
+  
+}
+```
