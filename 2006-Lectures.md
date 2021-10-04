@@ -1074,6 +1074,6 @@ The name of an array is a synonym for the address of its 0th element.\
 This means: `pa = &a[0];` can be written as `pa = a;`.\
 Therefore the value of a+i is the address of the i-th element after a\[0], and \*(a+i) is the contents of the i-th element after a[0].\
 This means `*(a+i)` is equivalent to `a[i]`.\
-Can also do so with a pointer: `pa[i]` is equivalent to `*(pa+i)`.
+Can also do so with a pointer: `pa[i]` is equivalent to `*(pa+i)` aka **you can index pointers like you do arrays**.
 
 An important difference between points and array names: an array can not be assigned to a pointer: `a = pa;` is not permitted
