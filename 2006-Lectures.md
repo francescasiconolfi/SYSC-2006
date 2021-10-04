@@ -950,3 +950,28 @@ int main() {
 
 Note: More asterisks indicates more levels of pointers (i.e. int **q is a pointer to a pointer to an int).
 
+### sizeof(struct)
+
+Function sizeof() will determine size needed for a struct based on its variable needs, which are stored in blocks of 8 bits (therefore a struct with an int and a double variable will need 16 bits, not 12, since the double is not stored in the leftover 4 of the int, since it cannot fully fit; a struct with an int and a float would only need 8, since the float can fit inside the leftover 4 bits).
+
+### Pointers and Structures
+Pointing to struct types:
+``` C
+
+  point_t* ptr; // creates pointer, ptr, which points to a value with type struct
+  point_t point1 = {320, 200}; // initializes point1 as a variable with type point_t, thereby making it a struct
+  
+  ...
+  
+  ptr = &point1; 
+  
+  /* pointer ptr now points to struct point1 (contains address of first byte in memory alloacted to point1 since it takes up more than one mem address */
+  
+```
+
+Notes:
+
+- \*ptr is the entire structure
+- (\*ptr).x and (\*ptr).y are the members
+- (\*ptr).x is read as "the x member of the structure pointed to by ptr"
+- parentheses are required since the dot operator has higher precedence than the asterisk: \*ptr.x means \*(ptr.x) which is an error since it would be trying to access the x member of ptr, not the value ptr points to
