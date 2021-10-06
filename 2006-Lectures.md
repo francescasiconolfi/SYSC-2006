@@ -1234,12 +1234,16 @@ Note: Returns negative value if s > t; Returns 0 if s == t (same length, charact
 
 Example:
 ``` C
+int main() {
 
   char name1[30];
   char name2[30];
   
   if (strcmp(name1, name2) != 0) {
     printf("Strings are different.");
+  } else {
+    printf("Strings are same.");
   }
+}
 ```
 
