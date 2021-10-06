@@ -1247,3 +1247,17 @@ int main() {
 }
 ```
 
+##### strstr
+Format: `char *strstr(const char *s, const char *t);`
+Function: Searches for the first occurence of the string pointed to by t in the string pointed to by s.
+Note: If string is found, returns a pointer to the located string; If string isn't found, returns **NULL pointer**.
+
+##### strcpy
+Format: `char *strcpy(char *dst, const char *src);`
+Function: Copies all chars in string pointed to by src (including NUL) to the string pointed to by dst, then returns dst.
+Note: Programmer is responisble for ensuring dst is big enough to hold all chars from src.
+
+##### strcat
+Format: `char *strcat(char *dst, const char *src);`
+Function: Appends a copy of the string pointed to by src (including NUL) to end of the string pointed to by dst, then returns dst
+Notes: (1) NUL at the end of dst is overwritten by first char of src, (2) Programmer is responisble for ensuring dst is big enough to hold all chars from src.
