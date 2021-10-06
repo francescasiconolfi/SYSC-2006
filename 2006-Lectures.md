@@ -1181,3 +1181,65 @@ double average(int *data, int n) {
 Summary:
 - fxn parameter `int data[]` is equivalent to int \*data
 - fxn can treat data as either an array of integers (data[i]), or a pointer to the first int in an array of ints, where each int can be accessed (\*data or \*(data+i))
+
+### Character Strings
+C does not have a string type.
+
+**String constant/literal**: A sequence of characters in double quotes, stored as an array of characters All strings are terminated with NUL ('\0'.
+
+Ex: "SYSC" would be stored as 'S' 'Y' 'S' 'C' '\0'
+
+Notes: (1) '\0' is not equivalent to '0' (the character zero) or NULL (the null pointer), (2) The number of elements in the array is always one more than the # of characters specified between quotes (because of NUL).
+
+Adjacent string constants are concatenated at compile time (i.e. "Hello, " "world!" would become "Hello, world!".
+
+#### String Variables
+The declaration: `char dept[] = "SYSC";` allocates an array named *dept*, initialized with 5 chars: 'S' 'Y' 'S' 'C' '\0'
+
+``` C
+  
+  char dept[] = "SYSC";
+  
+  // is equivalent to:
+
+  char dept[5];
+  dept[] = 'S';
+  dept[] = 'Y';
+  dept[] = 'S';
+  dept[] = 'C';
+  dept[] = '\0';
+  
+  // dept = "SYSC" would give an error; you cannot do this! Specify one character at a time.
+  
+```
+
+Notes: (1) If you specify a size too small for an array (# of char without including NUL for example), there will be a compile error, (2) If you specify a size too big for an array, the extra spaces are ignored.
+
+Putting *const* in front of char would make the string array immutable, and therefore none of its char elements could later be replaced.
+
+#### String Operations
+'+' CANNOT be used for string concatenation.
+
+#### Using <string.h>
+
+##### strlen
+Format: `size_t strlen(const char *s);`
+Function: Returns the length of the string pointed to by s, EXCLUDING '\0'
+Note: "size_t" specifies an int that is >= 0 (int would still work).
+
+##### strcmp
+Format: `int strcmp(const char *s, const char *t);`
+Function: Compares the string pointed to by s to the string pointed to by t.
+Note: Returns negative value if s > t; Returns 0 if s == t (same length, characters, in same order, i.e. arr1\[i] == arr2\[i]); Returns positive value if s > t.
+
+Example:
+``` C
+
+  char name1[30];
+  char name2[30];
+  
+  if (strcmp(name1, name2) != 0) {
+    printf("Strings are different.");
+  }
+```
+
