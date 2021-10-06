@@ -1170,10 +1170,14 @@ double average(int *data, int n) {
   int *i;
   
   for (i = data; i < n + data; i++) {
-    sum += *i;
+    sum += *i; // i will walk through array
   }
   
   ...
   
 }
 ```
+
+Summary:
+- fxn parameter `int data[]` is equivalent to int \*data
+- fxn can treat data as either an array of integers (data[i]), or a pointer to the first int in an array of ints, where each int can be accessed (\*data or \*(data+i))
