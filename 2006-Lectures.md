@@ -7,7 +7,8 @@
 [Lecture 5](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-5)\
 [Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)\
 [Lecture 7](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-7)\
-[Lecture 8](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-8)
+[Lecture 8](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-8)\
+[Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)
 
 ## Lecture 2
 
@@ -1104,4 +1105,75 @@ int samples[100];
 average(samples, 50);
 // is converted to
 average(&samples[0], 50);
+```
+
+---
+
+## Lecture 9
+
+### Arrays as Arguments Continued
+
+``` C
+
+double average(int data[], int n) {
+  ...
+}
+
+// is equivalent to
+
+double average(int *data, int n) { // first parameter is a "pointer to int"
+  double sum = 0;
+  int i;
+  
+  for (i = 0; i < n; i++) {
+    sum += *data + i);
+  }
+  
+  return sum / n;
+  
+}
+```
+
+#### Pointer Arithmetic
+Pointers are variables, so can add and subtract values from them: 
+Example: `pa = pa + 1;` updates *pa* to point to next array element.
+
+Common idioms:
+- `pa += `;`
+- `++pa;`
+- `pa++;`
+
+Example: "Walking Pointer"
+
+``` C
+
+double average(int *data, int n) { 
+  double sum = 0;
+  int i;
+  
+  for (i = 0; i < n; i++) {
+    sum += *data;
+    data += 1; // "Walks the pointer through the array
+  }
+  
+  return sum / n;
+  
+}
+```
+
+Example: Loop variable (i) as a pointer to int
+
+``` C
+
+double average(int *data, int n) { 
+  double sum = 0.0;
+  int *i;
+  
+  for (i = data; i < n + data; i++) {
+    sum += *i;
+  }
+  
+  ...
+  
+}
 ```
