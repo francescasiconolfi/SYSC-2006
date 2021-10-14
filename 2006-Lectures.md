@@ -8,7 +8,8 @@
 [Lecture 6](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-6)\
 [Lecture 7](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-7)\
 [Lecture 8](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-8)\
-[Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)
+[Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)\
+[Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
 
 ## Lecture 2
 
@@ -1261,3 +1262,8 @@ Note: Programmer is responisble for ensuring dst is big enough to hold all chars
 Format: `char *strcat(char *dst, const char *src);`
 Function: Appends a copy of the string pointed to by src (including NUL) to end of the string pointed to by dst, then returns dst
 Notes: (1) NUL at the end of dst is overwritten by first char of src, (2) Programmer is responisble for ensuring dst is big enough to hold all chars from src.
+
+---
+
+## Lecture 10
+
