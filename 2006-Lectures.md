@@ -1267,3 +1267,26 @@ Notes: (1) NUL at the end of dst is overwritten by first char of src, (2) Progra
 
 ## Lecture 10
 
+##### Walking Pointer Implementation for strcpy
+
+Example:
+``` C
+
+char *CU_strcpy(char *dst, const char *src) {
+  char *dest = dst;
+  while ((*dst = *src) != '/0') { // dst points to same thing as src, which cannot be equal to NUL while the loop runs
+    dst += 1;
+    src += 1;
+  }
+  return dest;
+}
+
+// MORE CONCISE:
+
+char *CU_strcpy(char *dst, const char *src) {
+  char *dest = dst;
+  while (*dst++ = *src++) { // this will stop when the statement in parentheses returns 0
+  }
+  return dest;
+}
+```
