@@ -1353,3 +1353,39 @@ int *pa;
 pa = malloc(10 * sizeof(int)); // allows for array of size 10
 assert(pa != NULL);
 ```
+
+#### Example
+``` C
+
+int main(void) {
+
+  // one int from heap
+  int *ptr_to_int;
+  ptr_to_int = malloc(sizeof(int));
+  assert(ptr_to_int != NULL);
+  
+  *ptr_to_int = 3;
+  
+  // one point_t struct from heap
+  point_t *ptr_to_struct;
+  ptr_to_struct = malloc(sizeof(point_t));
+  assert(ptr_to_struct != NULL);
+  
+  ptr_to_struct->x = 0;
+  ptr_to_struct->y = 0;
+  
+  // an array of 10 ints from heap
+  int *ptr_to_array;
+  ptr_to_array = malloc(10 * sizeof(int));
+  assert(ptr_to_array != NULL);
+  
+  // now giving it values:
+  for (int i = 0; i < 10; i += 1) {
+    ptr_to_array[i] = i; // or *(ptr_to_array + i) = i;
+  }
+  
+  free(ptr_to_int); // must free pointers from memory on heap at end of code
+  free(ptr_to_struct);
+  free(ptr_to_array);
+  
+```
