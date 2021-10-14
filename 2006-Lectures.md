@@ -1285,7 +1285,7 @@ char *CU_strcpy(char *dst, const char *src) {
 
 char *CU_strcpy(char *dst, const char *src) {
   char *dest = dst;
-  while (*dst++ = *src++) { // this will stop when the statement in parentheses returns 0
+  while (*dst++ = *src++) { // this will stop when the statement in parentheses returns 0 (false)
   }
   return dest;
 }
