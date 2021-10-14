@@ -1386,6 +1386,27 @@ int main(void) {
   
   free(ptr_to_int); // must free pointers from memory on heap at end of code
   free(ptr_to_struct);
-  free(ptr_to_array);
+  free(ptr_to_array); 
+  // include one free() for every malloc()
   
 ```
+
+#### Fixing addpoints function
+
+``` C
+
+typedef struct {
+  int x;
+  int y;
+} point_t;
+
+point_t *addpoints(point_t *ptr1, point_t *ptr2) {
+
+  point_t *sum;
+  
+  sump = malloc(sizeof(point_t));
+  assert(sump != NULL);
+  sump->x = ptr1->x + ptr2->x;
+  sump->y = ptr1->y + ptr2->y;
+  return sump;
+}
