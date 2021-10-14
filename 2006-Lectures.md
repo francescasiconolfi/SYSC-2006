@@ -1290,3 +1290,66 @@ char *CU_strcpy(char *dst, const char *src) {
   return dest;
 }
 ```
+
+### Allocating Memory on the Heap
+
+``` C
+#include <stdlib.h>
+.
+.
+.
+int *p;
+p = malloc(sizeof(int)); // malloc(para) is a function "memory allocation" with para as a # of memory allocations required on heap
+if (p != NULL( {
+  *p = 3;
+} else {
+  // error - malloc failed, NULL returned
+}
+```
+
+**sizeof(type-name)** is an operator that calculates the amount of memory (in bytes) required to hold one value of the specified type.
+
+**malloc(size)** allocates a block of memory of the specified size (bytes), from the heap.
+- returns a pointer to allocated memory block
+- is memory cannot be allocated, NULL is returned
+- <stdlib.h> required
+
+**assert(exp)** is a function that will terminate the program (w/ a error) if the expression (exp) is false, or will allow the program to continue if it is true.
+- <assert.h> required
+
+Typical format:
+``` C
+
+#include <stdlib.h> 
+#include <assert.h>
+
+int *p;
+p = malloc(sizeof(int));
+assert(p != NULL); // typically comes after a malloc declaration
+*p = 3;
+```
+
+#### Allocating a Struct
+
+``` C
+
+// allocate a struct that represents point (0, 0)
+
+point_t *ptr;
+ptr = malloc(sizeof(point_t));
+assert(ptr != NULL);
+ptr->x = 0;
+ptr->y = 0;
+```
+
+#### Allocating an Array
+
+``` C
+
+#include <stdlib.h> 
+#include <assert.h>
+
+int *pa;
+pa = malloc(10 * sizeof(int)); // allows for array of size 10
+assert(pa != NULL);
+```
