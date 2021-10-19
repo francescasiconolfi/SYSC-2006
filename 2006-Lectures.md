@@ -1411,6 +1411,7 @@ point_t *addpoints(point_t *ptr1, point_t *ptr2) {
   sump->y = ptr1->y + ptr2->y;
   return sump;
 }
+```
 
 ---
 
