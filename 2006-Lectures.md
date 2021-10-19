@@ -10,6 +10,7 @@
 [Lecture 8](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-8)\
 [Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)\
 [Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
+[Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)
 
 ## Lecture 2
 
@@ -1410,3 +1411,49 @@ point_t *addpoints(point_t *ptr1, point_t *ptr2) {
   sump->y = ptr1->y + ptr2->y;
   return sump;
 }
+
+---
+
+## Lecture 11
+
+### Allocating Arrays
+
+``` C
+
+#include <stdlib.h>
+#include <assert.h>
+
+int *alloc_array_of_ints(int capacity) {
+  int *pa;
+  
+  assert(capacity > 0); // stops program if statement is false
+  pa = malloc(capacity*sizeof(int))
+  assert(pa != NULL); // pa would be assigned NULL if malloc() failed
+  return pa;
+  
+  free pa; // release the array
+  pa = NULL;
+}
+```
+
+Note: For every malloc(), include a free()!
+
+### Freeing Memory
+The pointer passed to free must be one that was returned by a previous call to malloc() (passing any other pointer will likely corrupt the heap).
+
+``` C
+
+  int *pa;
+  int x;
+  int capacity = 10;
+  pa = malloc(capacity * sizeof(int));
+  
+  free(&x); // NO! x is not in the heap!
+  free(pa+1); // NO! pa+1 isn't the address of a (pa+1 is the second element of array a)!
+  free(pa); // YES! Releases the array!
+  pa = NULL;
+```
+
+Note: Do not free the memory more than once (can corrupt the heap).
+
+Free does not actually change the pointer's argument, it lets the program know the memory will not be used anymore.
