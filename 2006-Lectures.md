@@ -11,7 +11,7 @@
 [Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)\
 [Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
 [Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
-[Lecture 13]()
+[Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)
 
 ## Lecture 2
 
@@ -1482,7 +1482,7 @@ int main() {
 }
 ```
 
-### A Struture That Knows Its Capacity
+### A Structure That Knows Its Capacity
 
 ``` C 
 
@@ -1513,7 +1513,8 @@ arr_t *create_arr_t(int capacity, int increment) {
 }
 
 void check_arr_t(arr_t *p) {
-
+  assert(p != NULL && p->cap > 0 && p->inc > 0 && p->count >= 0 && p->elems != NULL && count <= cap);
+  
 }
 
 void add_arr_t(arr_t* p, int value) {
@@ -1533,8 +1534,8 @@ void add_arr_t(arr_t* p, int value) {
    }
    
    p->elems[p->count] = value;
-   count++;
-   // p->elems[p->count++] = value;
+   p->count++;
+   // p->elems[p->count++] = value; stores value in LHS and adds 1 to p->count
    
 }
 
