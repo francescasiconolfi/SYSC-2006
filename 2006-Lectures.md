@@ -1563,3 +1563,28 @@ int main(void) {
   
 }
 ```
+
+### Linked Lists
+Linked lists are made up of *nodes* and a pointer to the same structure type (to another node).\
+The *head pointer* points to the first node, and the end pointer is a special pointer to NULL marking the end of the linked list.\
+Can add a *tail pointer* to decrease the running time of certain operations.
+
+The simplest linked list: The head pointer is NULL.\
+Next simplest linked list: The head pointer points to a node, and the next pointer points to NULL.
+
+A singlely-linked list: Start at head, and walk towards tail.\
+A doublely-linked list: Start at head; can start at end; can walk back to beginning after any node.
+
+Each node is an intnode_t and the head is a pointer to a type intnode_t:
+``` C
+
+typedef struct intnode {
+  int value;
+  struct intnode *next; // because this is above synonym declaration, must use long form of struct intnode
+} intnode_t;
+
+intnode_t* head;
+```
+Notes: (1) *value* stores one int, (2) *next* stores the pointer to the next node in a linked list.
+
+---
