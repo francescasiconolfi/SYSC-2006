@@ -10,7 +10,8 @@
 [Lecture 8](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-8)\
 [Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)\
 [Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
-[Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)
+[Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
+[Lecture 13]()
 
 ## Lecture 2
 
@@ -1458,3 +1459,106 @@ The pointer passed to free must be one that was returned by a previous call to m
 Note: Do not free the memory more than once (can corrupt the heap).
 
 Free does not actually change the pointer's argument, it lets the program know the memory will not be used anymore.
+
+---
+
+## Lecture 13
+
+### Looping Through Characters (Number-Letter Conversion)
+ex.
+``` C
+
+int main() {
+  for (int i = 0; i < 5; i++) {
+    printf("%d ", i + 'A'); // prints 65 66 67 68 69
+  }
+  
+  for (int i = 0; i < 5; i++) {
+    printf("%c ", i + 'A'); // prints A B C D E
+  }
+  
+  return 0
+  
+}
+```
+
+### A Struture That Knows Its Capacity
+
+``` C 
+
+#include <assert.h>
+#include <stdlib.h>
+
+typedef struct {
+  int cap;
+  int inc;
+  int count;
+  int *elems;
+} arr_t;
+
+arr_t *create_arr_t(int capacity, int increment) {
+  assert(capacity > 0);
+  assert(increment > 0);
+  
+  arr_t *p = malloc(sizeof(arr_t));
+  assert(p != NULL);
+  
+  p->cap = capacity;
+  p->inc = increment;
+  p->count = 0;
+  p->elems = malloc(capacity * sideof(int));
+  
+  return p
+  
+}
+
+void check_arr_t(arr_t *p) {
+
+}
+
+void add_arr_t(arr_t* p, int value) {
+   check_arr_t(p);
+   
+   if (p->count == p->cap) {
+     p->cap += p->inc;
+     int *new = malloc(p->cap*sizeof(int));
+     assert(new != NULL);
+     for (int i = 0; i < p->count; i++) {
+        new[i] = p->elems[i];
+     }
+     free(p->elems); // getting rid of old array
+     p->elems = new;
+   }
+   
+   }
+   
+   p->elems[p->count] = value;
+   count++;
+   // p->elems[p->count++] = value;
+   
+}
+
+int main(void) {
+
+  arr_t *ptr = create_arr_t(3, 2);
+  add_arr_t(ptr, 5);
+  add_arr_t(ptr, 3);
+  add_arr_t(ptr, 99);
+  add_arr_t(ptr, 7);
+  add_arr_t(ptr, -5);
+  add_arr_t(ptr, 0);
+  
+  for (int i = 0; i < ptr->count; i++) {
+    printf("%d ", ptr->elems[i]);
+  }
+  printf("\n");
+  
+  free(ptr->elems);
+  ptr->elems = NULL;
+  free(ptr);
+  ptr = NULL;
+  
+  return 0;
+  
+}
+```
