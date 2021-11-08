@@ -1636,5 +1636,3 @@ else {
 head = intnode_construct(value, head);
 
 ```
-
-
