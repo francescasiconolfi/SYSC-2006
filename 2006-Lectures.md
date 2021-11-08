@@ -11,7 +11,8 @@
 [Lecture 9](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-9)\
 [Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
 [Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
-[Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)
+[Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)\
+[Lecture 15]()
 
 ## Lecture 2
 
@@ -1588,3 +1589,52 @@ intnode_t* head;
 Notes: (1) *value* stores one int, (2) *next* stores the pointer to the next node in a linked list.
 
 ---
+
+## Lecture 15 
+
+### Head and Tail Pointers
+Head pointer points to the first node, and tail pointer points to the last node.
+
+### Creating a Node
+Allocating a node on the heap:
+
+``` C
+
+intnode_t *p = malloc(sizeof(intnode_t));
+assert(p != NULL);
+p->value = 10;
+p->next = NULL;
+```
+
+NULL pointer: a constant pointer that does not point to any object.
+
+An **empty list** contains NULL in the head.
+
+### Designing Operations
+Ensure algorithm works for following cases:
+- empty lists
+- operation ahead of or at first node
+- operation after or at last node
+- operation in middle of list
+
+Example 1: Inserting at Beginning
+Consider cases 1 & 2:\
+Case 1: Create new node after head1.\
+Case2: Insert node between head1 and first node (pass value in new node, and pointer to what head pointer pointed to; head pointer points to new node)
+
+``` C
+
+if (head == NULL) {
+  head = intnode_construct(value, NULL);
+}
+else {
+  head = intnode_construct(value, head);
+}
+
+// Simplifying:
+
+head = intnode_construct(value, head);
+
+```
+
+
