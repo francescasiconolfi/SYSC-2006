@@ -12,7 +12,8 @@
 [Lecture 10](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-10)\
 [Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
 [Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)\
-[Lecture 15]()
+[Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
+[Lecture 16]()
 
 ## Lecture 2
 
@@ -1636,3 +1637,8 @@ else {
 head = intnode_construct(value, head);
 
 ```
+
+## Lecture 16
+
+### Traversing a Linked List
+
