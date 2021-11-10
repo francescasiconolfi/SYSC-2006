@@ -1641,4 +1641,22 @@ head = intnode_construct(value, head);
 ## Lecture 16
 
 ### Traversing a Linked List
+Make another ptr point to head's node, then update it so it continues to move throughout the nodes. If the ptr is NULL, know that have walked all the way through list.
+
+In other words, if the ptr is named "curr", writing a loop like so:
+- curr = head
+- done? (curr == NULL)?
+- if NO, then do something with curr->value
+- curr = curr->next // curr now points to what the ptr in the current node points to (i.e. the next node)
+
+For Loop version:
+``` C
+
+intnode_t *curr;
+for (curr = head; curr != NULL; curr = curr->next) {
+  // visit curr->value and do something
+}
+
+```
+
 
