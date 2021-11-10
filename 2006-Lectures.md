@@ -13,7 +13,7 @@
 [Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
 [Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)\
 [Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
-[Lecture 16]()
+[Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)
 
 ## Lecture 2
 
@@ -1659,4 +1659,18 @@ for (curr = head; curr != NULL; curr = curr->next) {
 
 ```
 
+### Functions that Traverse
+Writing a function that returns the length of the list (# of nodes): Walk through list and add to "count" (# of nodes) and "sum" (of node values)
+
+Two cases:
+- empty list (return 0)
+- non-empty list (return #)
+
+Writing a function that appends a node to the end: Stop when curr->next = NULL, then set curr->next to point to new node.
+
+Note: Ensure curr != NULL (since curr->next would cause an issue). If curr == NULL, this is a different case, since there are no nodes in the list (if statement).
+
+---
+
+## Lecture 17
 
