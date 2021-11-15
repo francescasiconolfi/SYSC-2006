@@ -1744,3 +1744,60 @@ intnode_t *delnode(intnode_t* head) {
   }
    
  ```
+
+### Big O Notation
+Format: O(n), where n is the performance (largest value from formula).
+
+**Order 1: O(1)**
+- Fixed algorithms that don't depend on *n*
+
+Example:
+- Inserting a node at the beginning of a linked list takes 4 steps, no matter *n* (i.e. the amount of nodes), so this is Order 1.
+- Changing *n* doesn't change the # of steps
+
+**Order *n*: O(n)**
+- Algorithms that depend on *n*
+- Grows directly in relation to *n* (linear relationship)
+
+Example:
+- Inserting a node at the end of a linked list depends on *n* (i.e. the amount of nodes that need to be walked through), so this is Order n.
+- Nested loops (i = 1-n, j = 1-n, gives a formula with n^2) have notation O(n^2))
+
+Order 2^N: O(2^N)
+- Alogrithms whose growth doubles with each addition to the input data set (exponential growth curve)
+
+Example:
+- Fibonacci numbers
+
+Order log(n): O(log N)
+- Algorithms that peak in the beginning and slowly flatten out as the size of the data set increases 
+
+Example:
+- Binary search (middle of data set is selected, and compared to target value to see if it is less or greater than the median (to see which data set to next compare to i.e. the first half or latter half)
+
+**Looking at different scenarios:**
+
+Adding a node at the beginning of a linked list is O(1) (head points to new node and new node's ptr points to original first node).
+
+Adding a node at the end of a linked list is O(n) (ptr has to walk through entire list).
+
+Adding a node at the end of a linked list with a tail ptr is O(1) (to delete would still be O(n)).
+
+Adding a node at the beginning of an array is O(n) (have to shuffle all the values over).
+
+Adding a value at the end of an array is O(1) (simply inserts at end if there is space).
+
+Deleting an element anywhere except the last element in an array is O(n) (requires shuffling).
+
+### Ring Arrays
+An array in the form of a ring.
+
+Start: Beginning of the array\
+End: First empty space (first element without value)\
+Count: Number of values\
+All begin with value 0. Highest possible value is (size - 1).
+
+Note: As new values are inserted, End and Count have 1 added to them. To remove beginning element, simply add 1 to Start.
+
+---
+
