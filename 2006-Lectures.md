@@ -13,7 +13,8 @@
 [Lecture 11](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-11)\
 [Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)\
 [Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
-[Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)
+[Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
+[Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)
 
 ## Lecture 2
 
@@ -1674,3 +1675,72 @@ Note: Ensure curr != NULL (since curr->next would cause an issue). If curr == NU
 
 ## Lecture 17
 
+### Adding and Deleting Nodes at the End of a Linked List
+
+``` C
+
+intnode_t *append(intnode_t* head, int vale) {
+
+intnode_t *newnode = intnode_construct(value, NULL);
+
+  if (head == NULL) {
+    return newnode; // only node in list
+  }
+  
+  // for lists with nodes, traverse list until curr->next is NULL
+  intnode_t *curr;
+  for (curr = head; curr->next != NULL; curr = curr->next) {
+    printf("currentvalue is: %d\n", curr->value); // shows us what's happening
+  }
+  curr->next = newnode;
+  
+  return head;
+}
+
+// method 1: using two ptrs
+intnode_t *delnode(intnode_t* head) {
+  
+  if (head == NULL) {
+    return NULL;
+  }
+  
+  //traverse using prev and curr; prev points to last node and curr points to NULL by end
+  intnode_t *prev, *curr;
+  for (prev = NULL, curr = head; curr->next != NULL; prev = curr, curr = curr->next) {
+    printf("The current node contains: %d\n", curr->value);
+  }
+  free(curr); // finished using last node
+  
+  // case with only one node
+  if (prev == NULL) { // i.e. if there was only one node in the list, set head to NULL
+    head = NULL;
+  } else {
+     prev->next = NULL; // i.e. make the pointer after prev point to NULL (thereby ending the list)
+   }
+   
+   // method 2: using one ptr
+   intnode_t *remove_last(intnode_t *head) {
+    
+    intnode_t *current;
+    
+    // case 1: empty list (i.e. there's nothing to delete)
+    assert(head != NULL);
+    
+    // case 2: there is exactly one node
+    if (head->next == NULL) {
+      free(head);
+      head = NULL;
+    } // case 3: there is > 1 node
+    else {
+      for (current = head; current->next->next != NULL; // as long as the ptr of the next node != NULL
+      current = current->next;
+    }
+    // current now poiuts to the node before the node to delete
+    free(current->next);
+    .. current now points to last node
+    current->next = NULL;
+    
+    return head;
+  }
+   
+ ```
