@@ -14,7 +14,8 @@
 [Lecture 13](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-13)\
 [Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
 [Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
-[Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)
+[Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
+[Lecture 18]()
 
 ## Lecture 2
 
@@ -1801,3 +1802,118 @@ Note: As new values are inserted, End and Count have 1 added to them. To remove 
 
 ---
 
+## Lecture 18
+
+Freeing the first node without freeing the other nodes in a linked list causes a memory leak. This can cause the memory to become filled without any way to access it.
+
+One way to properly delete the first node:
+``` C
+// inside a free all nodes function:
+
+intnode_t *current, *node_to_delete;
+
+for (intnode_t *current = head; current != NULL; ) {{
+  node_to_delete = current;
+  current = current->next; // moves current to next node
+  free(node_to_delete); // frees first node
+}
+```
+
+Example: Inserting a node according to value order
+``` C
+
+intnode_t* insert_in_order(intnode_t* head, int value) {
+  
+   intnode_t *prev, *curr;
+   for (prev = NULL; curr = head; curr != NULL && value > curr->value; pre = curr, curr = curr->next) {
+    printf("The current node contains: %d\n", curr->value);
+   }
+   
+   if (prev == NULL) {
+    head = intnode_construct(value, curr);
+   } else {
+    prev->next = intnode_construct(value, curr);
+   }
+   
+   return head;
+}
+```
+
+### Queues and Stacks
+
+#### Queues
+Imagery: a queue/line in a store
+
+*Queue*: A collection in which the elements are maintained in the order in which they are added (First-in, First-out: FIFO)
+- Enqueue: Insert at end
+- Dequeue: Remove from beginning
+- Look/Peek: Check the beginning
+
+Example: 
+- Enqueue 5, now have: (front) 5 (rear)
+- Enqueue 3, now have: (front) 53 (rear)
+- Enqueue 7, now have: (front) 537 (rear)
+- Dequeue (returns 5), now have: (front) 37 (rear)
+- Dequeue (returns 3), now have: (front) 7 (rear)
+
+Note: Since elements are always added at rear but retrieved from front, should pick a data structure that permits efficient manipulation of both ends of the queue (access to middle is not important)
+
+**With Singly Linked Lists**
+
+*Ways of Implementing*
+With one pointer: If head is 'front', enqueue is O(n), and dequeue is O(1)\
+With one pointer: If head is 'rear', enqueue is O(1), and dequeue is O(n)\
+With two pointers: If head is 'rear' and tail ptr is 'front', enqueue is O(1) and dequeue is O(n) (need access to node before to change it to NULL)\
+**With two pointers: If head is 'front' and tail ptr is 'rear', enqueue is O(1) and dequeue is O(1)** (BEST WAY)
+
+Circular Linked List: Instead of last node pointing to NULL (know it's last node because rear (tail ptr) points to it, it points to head (saves memory)
+
+**With Arrays**
+If want both dequeue and enqueue operations to be O(1), use a *ring array* 
+
+#### Stacks
+Imagery: A stack of plates
+
+*Stack*: A collection in which the elements are mainted in the order in which they were added (Last-in, First out: LIFO)
+- Push: Insert at top
+- Pop: Remove from top
+- Peek: Check top
+
+Example:
+- Push 10, now have: (top) 10
+- Push 20: (top) 20 | 10
+- Peek: 20 returned
+- Pop: (top) 10 (20 removed & returned)
+
+Other Operations:
+- Determine if stack is empty
+- Empty a stack
+- Determine length
+- Compare two stacks for equality
+- Print contents
+- Iterate over contents
+
+Unsupported Operations:
+- Searching a stack for a specific element
+- Removing a specific element
+- Retrieving/Replacing/Inserting/Deleting an element at a specific position
+
+Note: These all contradict LIFO
+
+**With Singly Linked Lists**
+
+*Ways of Implementing*
+- With one pointer: Head is 'top' and the last node is the 'bottom' (push, pop, and peek operating on the front of the linked list with be O(1)
+
+Note: Both a tail pointer or a doubly linked list are unnecessary since already achieved O(1)
+
+``` C
+
+typedef struct {
+  intnode_t *top;
+  int size; // not necessary but useful
+} intstack_t;
+
+```
+
+---
