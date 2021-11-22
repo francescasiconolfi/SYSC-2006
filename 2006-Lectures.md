@@ -15,7 +15,7 @@
 [Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
 [Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
 [Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
-[Lecture 18]()
+[Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)
 
 ## Lecture 2
 
