@@ -16,7 +16,7 @@
 [Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
 [Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
 [Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)\
-[Lecture 19]()
+[Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)
 
 ## Lecture 2
 
@@ -2038,4 +2038,49 @@ typedef struct {
 } ringarray_t;
 
 ```
- 
+
+### Stack Implementation
+
+``` C
+
+typedef struct {
+  intnode_t *top; // points to node at head of stack (NULL if stack is empty for linked lists)
+  int size; // # of items in the stack
+} intstack_t;
+
+intstack_t *intstack_construct(void) {
+
+  intstack_t *ptr;
+  ptr = malloc(sizeof(intstack_t));
+  ptr->top = NULL;
+  ptr->size = 0;
+  return ptr;
+}
+
+// pushing value to top of stack
+void intstack_push(instack_t *stack, int value) {
+  stack->top = intnode_construct(value, stack->top);
+  stack->size += 1;
+}
+
+// return value at top of stack
+int intstack_peek(intstack_t *stack) {
+  return stack->top->value;
+}
+
+// remove and return value at top of stack
+int instack_pop(instack_t *stack) {
+  int popped;
+  intnode_t *node_to_delete;
+  
+  popped = stack->top->value;
+  node_to_delete = stack->top;
+  stack->top = stack->top->next;
+  free(node_to_delete);
+  stack->size -= 1;
+  
+  return popped;
+}
+
+```
+
