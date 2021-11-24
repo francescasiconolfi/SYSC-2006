@@ -2084,3 +2084,35 @@ int instack_pop(instack_t *stack) {
 
 ```
 
+### Recursion
+
+#### Calculating Factorials
+Example: 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720
+
+Iterative factorial(): Uses a loop to calculate partial products
+
+Another way to calculate 6!: 6! = 6 * 5! ... continuing until 1! = 1
+
+Recursive solution: Specifies the solution to a large problem in terms of the solution to a similar, smaller problem
+
+Recursion definition of n!:\
+n! = n * (n - 1)!, n > 1 (recursive case)\
+1! = 1 (base case: know the answer)
+
+A **recursive function**: A function that calls itself
+
+Example:
+``` C
+
+int factorial(int n) {
+  if (n == 1) {
+    return 1;
+  }
+  int result = n * factorial(n - 1);
+  
+  return result;
+}
+
+---
+
+
