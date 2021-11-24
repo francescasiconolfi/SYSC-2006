@@ -15,7 +15,8 @@
 [Lecture 15](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-15)\
 [Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
 [Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
-[Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)
+[Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)\
+[Lecture 19]()
 
 ## Lecture 2
 
@@ -1917,3 +1918,124 @@ typedef struct {
 ```
 
 ---
+
+## Lecture 19
+
+### Working with Queues
+
+``` C
+
+typedef struct {
+  intnode_t *front;
+  intnode_t *rear;
+  int size;
+} intqueue_t;
+  
+intnode_t *intnode_construct(int value, intnode_t *next)
+{
+    intnode_t *p = malloc(sizeof(intnode_t));
+    //assert (p != NULL);
+    p->value = value;
+    p->next = next;
+    return p;
+}
+
+/* Return a pointer to a new, empty queue.
+ * Terminate (via assert) if memory for the queue cannot be allocated.
+ */
+intqueue_t *intqueue_construct(void)
+{
+    intqueue_t *queue = malloc(sizeof(intqueue_t));
+    // assert(queue != NULL);
+
+    queue->front = NULL;
+    queue->rear = NULL;
+    queue->size = 0;
+    return queue;
+}
+
+void intqueue_enqueue(intqueue_t *queue, int value)
+{
+    //assert(queue != NULL);
+
+    // Store value in a new node, and append the node at the rear of
+    // the queue (the tail of the linked list).
+
+    intnode_t *p = intnode_construct(value, NULL);
+
+    if (queue->front == NULL) {
+        // Case 1: the queue is empty.
+        // front will be NULL if we are enqueue'ing a value in an 
+        // empty queue. Because we're inserting a node in an empty 
+        // linked list, we have to update the pointer to the head node.
+        queue->front = p;
+    } else {
+        // Case 2: the queue is not empty.
+        // Append the node to the tail of the queue's linked list.
+        queue->rear->next = p;
+    }
+    queue->rear = p;  // Always update the pointer to the node
+                      // at the tail of node's linked list.
+    queue->size += 1;
+}
+
+/* Copy the value at the front of a queue to the variable pointed to
+ * by parameter element, remove that value from the queue, and return 
+ * true. Return false if the queue is empty.
+ * Parameter queue points to the queue.
+ * Terminate (via assert) if queue is NULL.
+ */
+ 
+ _Bool intqueue_dequeue(intqueue_t *queue, int *element)
+{
+    // assert(queue != NULL);
+
+    // Case 1: the queue is empty.
+    if (queue->size == 0) {
+        return false;  // Can't dequeue a value from an empty queue.
+    }
+
+    // Case 2: the queue has exactly one element.
+    // Case 3: the queue has more than element.  
+    // Retrieve the value from the node at the front of the queue
+    // (the head of the linked list) and deallocate that node.
+    // The next node (if any) becomes the node at the queue front.
+
+    *element = queue->front->value;
+
+    intnode_t *node_to_delete = queue->front;
+    queue->front = queue->front->next;  // Update the pointer to the 
+                                        // node at the head of the
+                                        // queue's linked list.
+    free(node_to_delete);
+
+    // Extra processing for Case 2.
+    // front will be NULL if the queue is now empty; i.e., if we just
+    // performed a dequeue operation on a queue with one element.
+    // Because the queue is now empty, we also have to NULL the pointer
+    // to the rear of the queue.
+
+    if (queue->front == NULL) {
+        queue->rear = NULL;  // front and rear are both NULL in 
+                             // an empty queue
+    }
+    
+    queue->size -= 1;
+    return true;
+}
+```
+
+### Ring Array Implementation
+
+``` C
+
+typedef struct {
+  int* array;
+  int capacity;
+  int size; // number of elements currently stored
+  int start; // index of the first one
+  int end; // index one after the last one
+} ringarray_t;
+
+```
+ 
