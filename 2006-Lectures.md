@@ -2135,7 +2135,7 @@ int sum_array(int a[], int n) {
 }
 ```
 
-## Checking if a Value Occurs in a Certain Array Element
+### Checking if a Value Occurs in a Certain Array Element
 
 ``` C
 
