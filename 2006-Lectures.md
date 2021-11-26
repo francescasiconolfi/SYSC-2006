@@ -2113,6 +2113,7 @@ int factorial(int n) {
   
   return result;
 }
+```
 
 ---
 
