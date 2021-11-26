@@ -16,7 +16,8 @@
 [Lecture 16](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-16)\
 [Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
 [Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)\
-[Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)
+[Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)\
+[Lecture 20]()
 
 ## Lecture 2
 
@@ -2117,5 +2118,66 @@ int factorial(int n) {
 
 ## Lecture 20
 
+### Summing an Array Recursively
 
+Sum(a[i]) = Sum(a[i] + a[n-1] (recursive case)\
+Sum(a[i] = a[0] (base case)
 
+``` C 
+
+int sum_array(int a[], int n) {
+  if (n == 1) {
+    return a[0];
+   }
+   int sum = a[n - 1] + sum_array(a, n - 1);
+   
+   return sum;
+}
+```
+
+## Checking if a Value Occurs in a Certain Array Element
+
+``` C
+
+_Bool value-inarray(int a[], int n, int value) {
+  _Bool result;
+  
+  // base case
+  if (n <= 0) {
+    result = false;
+    return result;
+  }
+  // if last element is value
+  if (a[n - 1] == value) {
+    result = true;
+    return result;
+  }
+  result = valueinarray(a, n - 1, value);
+  return result;
+}
+
+int main(void) {
+  int elems[] = {2, 3, 5, 6, 2, 7};
+  
+  printf("7 is %sin the array\n", valueinarray(elems, 6, 7)?"";"not "); // puts empty str in %s' place if true, puts "not " in %s' place if false
+  
+}
+```
+
+### Using Recursion with Linked Lists
+
+#### Summing Elements
+
+``` C
+int sumlist(intnode_t* head) {
+  if (head == NULL) {
+    sum = 0;
+    return sum;
+  }
+  sum = head->value + sumlist(head->next);
+  return sum;
+  
+}
+```
+
+---
