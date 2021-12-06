@@ -2241,4 +2241,43 @@ int Perrin(int n) {
 ```
 Note: This is O(2^n)
 
+### Tail Recursion (Not Performed in C)
+When a recursive function has the recursive call as the very last thing in the function
+
+The idea: since the recursive call is the last call, there is nothing left to do in current function, so saving the current function's stack frame is of no use
+
+A non-tail-recursive function: When the final step is not the recursive call (i.e. when the recursive call multipled by something in the return statement, the multiplication is the last step, not the recursive call)
+
+### Binary Search
+Of order O(log N) (base 2)
+
+``` C
+// Recursive Binary Search
+
+_Bool binSearch(int* arr, int start, int end, int value) {
+  int numelts, index, test;
+  _Bool result;
+  numelts = end + 1 - start;
+  if (numelts <= 0) {
+    result = false;
+    return result;
+  }
+  index = numelts / 2 + start;
+  test = arr[index];
+  
+  if (value == test) {
+    result = true;
+    return result;
+  }
+  if (value < test) {
+    result = binSearch(arr, start, index - 1, value); // end becomes the index before the original middle index #
+    return result;
+  }
+  
+  result = binSearch(arr, index + 1, end, value); // start becomes next index over of original middle index #
+  return result;
+}
+```
+
+---
 
