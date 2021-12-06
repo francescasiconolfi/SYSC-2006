@@ -17,7 +17,8 @@
 [Lecture 17](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-17)\
 [Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)\
 [Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)\
-[Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)
+[Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)\
+[Lecture 21]()
 
 ## Lecture 2
 
@@ -2182,3 +2183,62 @@ int sumlist(intnode_t* head) {
 ```
 
 ---
+
+## Lecture 21
+
+### Fibonacci Numbers Example
+Fibonacci numbers: 0 1 1 2 3 5 8 13 21 34...
+
+Fib(0) = 0 
+Fib(1)
+Fib(n) = Fib(n-1) + Fib(n-2) for n > 1
+Undefined for non-ints and negative ints
+
+- xyz will represent first 3 numbers; slide them over to continue the series
+
+``` C
+
+int fibiter(int n) {
+  int x, y, z;
+  x = 0;
+  y = z = 1;
+  for (int i = 0; i < n; i++) { // shifting xyz over in the series
+    x = y;
+    y = z;
+    z = x + y;
+  }
+  return x;
+}
+```
+Note: A recursive verion of this returns fibiter(n-1) + fibiter(n-2) (O(2^n))
+
+### Sample Final Exam Question
+The Perrin sequence:
+
+P(0) = 3
+P(1) = 0
+P(2) = 2
+P(n) = P(n-2) + P(n-3); n >= 3
+
+``` C
+
+int Perrin(int n) {
+
+  if (n < 0) {
+    return -1;
+  }
+  if (n == 0) { 
+    return 3;
+  }
+  if (n == 1) { 
+    return 0;
+  }
+  if (n == 2) { 
+    return 2;
+  }
+  return Perrin(n-2) + Perrin(n-3);
+}
+```
+Note: This is O(2^n)
+
+
