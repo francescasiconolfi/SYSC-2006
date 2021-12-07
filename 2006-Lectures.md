@@ -2290,6 +2290,34 @@ Go is a modern language based on C (designed for systems programming)
 All code is organized in packages like so:
 `package main`
 
-Importing package:
-`import fmt`
+Importing package: `import fmt`
 
+Program execution always starts in function main: `func main()`
+
+Opening brace have to be on its own line.
+
+Program that converts from F to C:
+``` Go
+
+package main
+
+import "fmt"
+
+func main() 
+{ 
+  var lower, upper, step int
+  var fahr, celsius float64
+  
+  lower = 0
+  upper = 300
+  step = 20
+  
+  for fahr = float64(lower);
+      fahr <= float64(upper);
+      fahr = fahr + float64(step) {
+      celsius = 5.0/9.0 * (fahr - 32.0)
+      fmt.Printf("%4.0f %6.1f\n", fahr, celsius)
+  }
+}
+```
+Note: Can't mix numeric types in an expression or assignment statement
