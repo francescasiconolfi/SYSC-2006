@@ -18,7 +18,8 @@
 [Lecture 18](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-18)\
 [Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)\
 [Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)\
-[Lecture 21](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-21)
+[Lecture 21](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-21)\
+[Lecture 22]()
 
 ## Lecture 2
 
@@ -2280,4 +2281,15 @@ _Bool binSearch(int* arr, int start, int end, int value) {
 ```
 
 ---
+
+## Lecture 22
+
+### Introduction to Go
+Go is a modern language based on C (designed for systems programming)
+
+All code is organized in packages like so:
+`package main`
+
+Importing package:
+`import fmt`
 
