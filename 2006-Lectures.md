@@ -19,7 +19,7 @@
 [Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)\
 [Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)\
 [Lecture 21](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-21)\
-[Lecture 22]()
+[Lecture 22](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-22)
 
 ## Lecture 2
 
@@ -2321,3 +2321,151 @@ func main()
 }
 ```
 Note: Can't mix numeric types in an expression or assignment statement
+
+#### Short Variable Declarations
+Put `:=` to represent initialization of a variable with the type of the expression assigned\
+Ex: `pow := 1` makes pow an int
+
+#### Function Declarations
+Types are to right of variable names: `func power(base int, n int) int {`
+
+Note: `%v` in Printf() will print values in their default type
+
+#### Passing Arguments to Functions
+Go uses pass-by-value (variable values are not actually changed outside of functions)
+
+### Go Types, Variables, Structures
+
+#### Numeric Types
+- int: signed int 
+- uint: unsigned int
+- uintptr: unsigned int that can hold a ptr
+- int8, int16, int32, int 64 (same for uint)
+- byte: alias for uint8
+- rune: alias for int32
+- float32, float64
+- complex64, complex128
+- bool
+- string (immutable)
+
+#### Variable Declarations
+Examples:
+`var i int = 1`
+`var j, k int = 3, -5`
+`var j, k = 3, -5` where j and k will be given type int
+`var f, done = 7.5, false` where f has type float64 and done has type bool
+
+If not given an initial value, variable with be initialized with its zero value (variables can never be uninitialized).
+
+##### Short Variable Declarations:
+Denoted by := omits var and type (which is inferred)
+
+#### Operators
+Same numeric operators (with op=)
+
+Strings: + is for concatenation, and others work
+
+Cannot do: ++x and --x, but can do x++ and x-- (but they are considered statements in Go)
+
+Cannot use `=` to yield a value in i.e. if statements (bug in C)
+
+##### Tuple Assignments:
+Format: `var1, var2, var3 = ex1, ex2, ex3`
+
+Can swap like so: `x, y = y, x`
+
+Alternate form: `var1, var2, var3 = f()` if its return statement returns 3 expressions (return ex1, ex2, ex3)
+
+#### Pointers
+Format: `var p *type`
+
+`&x` denotes the address of x\
+`*p` denotes the value p points to
+
+Note: Zero value of a ptr is "nil" (and \*p will cause a run-time panic if p is nil)
+
+Can use == and != to compare ptrs.
+
+#### Example
+
+``` Go
+package main
+
+import "fmt"
+
+func SumProductDiff(i, j int) (int, int, int) {
+  return i+j, i*j, i-j
+}
+```
+
+#### If Statements
+Format:
+``` Go
+
+if var1 < var2 {
+  body
+} else {
+  body
+}
+```
+Note: No "else if" statement
+
+Initial Statement:
+``` 
+if x := f(); x < y {
+  return x
+} else {
+  return y
+}
+```
+Note: Can initialize x before checking if it's less than y
+
+#### For Statements
+Format: `for intial; comparison; increment {`
+where initial and increment are optional (which creates a while loop if omitted)
+
+#### Return
+Can return multiple values: `return v1, v2, v3`
+
+#### Memory Model
+Go decides whether the function's variables should be stored in frame or in heap
+
+Example: `return &d` would cause Go to allocate d on heap
+
+#### Arrays
+- Have fixed capacity
+- All elements need same type
+- Indicies start with 0
+
+Declaration format: `type variableName [length]typeOfElems{elem1, elem2, ..., elemN}`
+
+Note: Initializes with 0 values
+
+Can also put \[...] in place of length if elems are given (sets length to # of elems given)
+
+##### Operations
+- len()
+- \[index] between 0 and len(array) - 1
+
+Can only assign one array to another if they have the same type.
+
+Can also use ==, != to compare them (equal if same length and have same elements in each index).
+
+#### Arrays and Functions
+Must specify length of array in parameter declaration: `average(arr \[len]type, n int)`
+
+Note: Arrays are passed by value (array is unchanged outside of function).
+
+#### With Pointers
+Format: `type p *[len]type`
+
+`p = arr` will not work.
+
+Can use ptr to access elements: `(*p)[0] = 10` will change value at index 0 to 10
+
+Pointers can be made to point to a single element if they are of same type.
+
+---
+
+
+
