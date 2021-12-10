@@ -19,7 +19,10 @@
 [Lecture 19](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-19)\
 [Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)\
 [Lecture 21](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-21)\
-[Lecture 22](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-22)
+[Lecture 22](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-22)\
+[Lecture 23]()\
+[Lecture 24]()\
+[Lecture 25]()
 
 ## Lecture 2
 
@@ -2467,5 +2470,94 @@ Pointers can be made to point to a single element if they are of same type.
 
 ---
 
+## Lecture 23
 
+### Go Slices
+`Type \[]T` is type "slice of values of type T"
+
+Specifying upper and lower bounds:
+`var s []int = a[1:4]`
+where the upper bound is one more than the index stopped at
+
+Creating a slice without creating an array first:
+`s := []int{10, 20, 30, 40, 50}`
+
+Note: Changing elements of a slice changes its backing array.
+
+*Length and Capacity*
+- Length: # of elements in the slice
+- Capacity: # of elements in backing array starting with the first element in the slice
+- Built-in functions len(s) and cap(s) return the length and capacity of slice s
+
+**Reslicing a slice: **
+``` Go
+
+s := []int{10, 20, 30, 40, 50, 60, 70}
+s = s[1:5]
+s = s[0:3]
+```
+
+First line: \[10 20 30 40 50 60 70]; len = 7; cap = 7\
+Second line: \[20 30 40 50]; len = 4; cap = 6\
+Third line: \[20 30 40]; len = 3; cap = 6
+
+Note: Can extend a slice as well.
+
+**Making a Slice with make()**
+- make([]T, len) returns a new slice
+- Slice has length and cap equal to len
+- Optional 3rd argument: cap
+
+**Built-in Function append()**
+- Appends one or more elements to s and returns s
+- append(s, i) appends i to s
+- append(s, i, v, w) appends i, v, w to s
+
+Note: Go increases the slice's capacity by a factor of ~2 if appending to a full backing array
+
+Remember: Slice s is passed by value to append().
+
+Example:
+`t := append(s, 5)` will not change s
+
+Exercise: 
+Draw a diagram that depicts how you think slices are stored in memory with the following.
+`s := []int{1, 2, 3, 4, 5}`
+`t := s[0:cap(s)]`
+`v := s\[1:cap(s)-1]`
+
+### Hash Tables & Dictionaries (Maps)
+In C, we'll use a hash table implemented as an array of linked lists to design a dictionary.
+
+*Hash Table:* A fixed-capacity array.\
+*Hash Function:* Maps a key to a hash value.\
+*Hash Value:* The index of a slot in the hash table (an element in the array).
+
+*Perfect Hash Function:* Gives a one-to-one mapping from a set of *n* keys to *n* different slots (table len is <= n)
+
+Resolving Collisions:
+- Closed Addressing/Open Hashing: Arbitrary number of keys per bucket; uses a linked list to deal with collisions
+- Open Addressing/Closed Hashing: At most one key per bucket; keep moving forward until find a space if one returned is already occupied
+
+Insertion Operation:
+- Hash function maps the key to a slot in the hash table
+- Search the chain for an entry containing the key
+- If not found, create a new entry containing the key and associated value and insert it in the chain (create a new node that key points to and point to old node)
+- If found, replace the value currently associated with the key
+
+Example: If k3, v3 returns 1 and 1 already points to k1, v1, insert a new node containing k3, v3 and make the new node point to k1, v1's node.
+
+Lookup Operation: 
+- We provide the key, then the hash function maps the key to a slot in the hash table
+- Search the chain for an entry containing the key (if not there, not in the table)
+- If found, return value associated with key
+
+Note: Hash funciton should be O(1), but worse case is O(n) (when all *n* keys in hash table map to same slot).
+
+Hash Table Efficiency:
+- Alpha = n (# of items in table) / m (# of chains)
+- If successful search: Average number of comparisons required to locate a key = 1 + alpha/2
+- If unsuccessful search: Number of comparisons = 1 + alpha
+- The running time of the searches is O(alpha) and is proportional to n and inversely proportional to m
+- If m >= n/K (K is a constant) then alpha <= K and running time to search one chain is <= O(K) (since running time is O(alpha)) which is O(1)
 
