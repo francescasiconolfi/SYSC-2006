@@ -20,7 +20,7 @@
 [Lecture 20](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-20)\
 [Lecture 21](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-21)\
 [Lecture 22](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-22)\
-[Lecture 23]()\
+[Lecture 23](https://github.com/francescasiconolfi/SYSC-2006/blob/main/2006-Lectures.md#lecture-23)\
 [Lecture 24]()\
 [Lecture 25]()
 
@@ -2560,4 +2560,107 @@ Hash Table Efficiency:
 - If unsuccessful search: Number of comparisons = 1 + alpha
 - The running time of the searches is O(alpha) and is proportional to n and inversely proportional to m
 - If m >= n/K (K is a constant) then alpha <= K and running time to search one chain is <= O(K) (since running time is O(alpha)) which is O(1)
+
+#### Dictionary/Map
+A collection of (key, value) pairs.
+- keys are unique
+- duplicate values are permitted
+
+**Primary Operations:**
+- Add (insert) a (key, value) pair
+- Retreive (look up) the value associated with a key
+- Remove a (key, value) pair
+
+One design: An array with each element acting as a pointer to linked lists (different nodes) (different (keyu, value) pairs)
+
+Hash Table Implementation:
+``` C
+
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+
+const int TABLESIZE = 5;
+
+typedef struct entry {
+    struct entry *next;  // next entry in the linked list
+    char *key;
+    char *value;         // value associated with the key
+} entry_t;
+
+typedef entry_t *dict_t;
+
+static char *strdu(char *s)
+{
+    char *p = malloc(strlen(s) + 1);  // +1 for '\0'
+    if (p != NULL) {
+        strcpy(p, s);
+    }
+    return p;
+}
+
+static unsigned hash(char *s)
+{
+    unsigned int hashvalue;
+
+    for (hashvalue = 0; *s != '\0'; s += 1) {
+        hashvalue = *s + 31 * hashvalue;
+    }
+    return hashvalue % TABLESIZE;
+}
+
+static entry_t *search(entry_t *head, char *key)
+{
+    for (entry_t *entry = head; entry != NULL; entry = entry->next) {
+        if (strcmp(key, entry->key) == 0) {
+            return entry;  
+        }
+    }
+    return NULL;
+}
+
+dict_t *make_dictionary(void)
+{
+    dict_t *hashtable = malloc(sizeof(entry_t *) * TABLESIZE);
+    assert(hashtable != NULL);
+
+    for (int i = 0; i < TABLESIZE; i += 1) {
+        hashtable[i] = NULL;
+    }
+    return hashtable;
+}
+
+char *get(dict_t *dict, char *key)
+{
+    unsigned hashvalue = hash(key);
+    entry_t *entry = search(dict[hashvalue], key);
+    if (entry != NULL) {
+        return entry->value;
+    }
+    return NULL;
+}
+
+void put(dict_t *dict, char *key, char *value)
+{
+    unsigned hashvalue = hash(key);
+    entry_t *entry = search(dict[hashvalue], key);
+    if (entry == NULL) { 
+      
+        entry = malloc(sizeof(entry_t));
+        assert(entry != NULL);
+        entry->key = strdu(key);
+        assert(entry->key != NULL);
+
+        entry->next = dict[hashvalue];
+        dict[hashvalue] = entry;
+    } else {  
+        free(entry->value); 
+    }
+
+    entry->value = strdup(value);
+    assert(entry->value != NULL);
+}
+```
+
+---
 
